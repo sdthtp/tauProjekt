@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         checkConnectivity();
         System.out.println("helo world");
+        System.out.println("Testmerge");
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
