@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#000">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:padding="20dp"
+            android:src="@drawable/tau_beyaz" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:background="@drawable/border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ad Soyad:"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yemek Bakiyesi:"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold"
+                android:paddingTop="15dp" />
+
+            <TextView
+                android:id="@+id/yemek_bakiye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXX.XX TL"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numarası:"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ogrenci_numarasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="160503131"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shuttle Bakiyesi:"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold"
+                android:paddingTop="15dp" />
+
+            <TextView
+                android:id="@+id/shuttle_bakiye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXX.XX TL"
+                android:textColor="#6c6c6c"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

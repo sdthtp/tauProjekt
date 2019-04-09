@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:iconTint="#FFF"
+        android:id="@+id/paragonder"
+        android:icon="@drawable/ic_card_giftcard_black_24dp"
+        android:title="Para Gonder" />
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/ic_baseline_feedback_24px"
+        android:title="Feedback" />
+    <item
+        android:id="@+id/odeme"
+        android:icon="@drawable/ic_euro_symbol"
+        android:title="Ödeme" />
+    <item
+        android:iconTint="@color/nav_state_list"
+        android:id="@+id/bagis"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="Bagis" />
+    <item
+        android:iconTint="@color/nav_state_list"
+        android:id="@+id/oner"
+        android:icon="@drawable/ic_local_offer_black_24dp"
+        android:title="Oner" />
+</menu>

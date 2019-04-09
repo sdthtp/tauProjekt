@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.ParagonderFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Burada arkadaşınıza veya tanıdığınıza numarasını girerek para gönderebilirsiniz."
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/tf_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Öğrenci Numarası" />
+
+    <EditText
+        android:id="@+id/tf_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Miktar" />
+
+    <ToggleButton
+        android:id="@+id/tb_balanceId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="Mensa Bakiye"
+        android:textOn="Shuttle Bakiye"
+        />
+
+    <Button
+        android:id="@+id/bu_paragonder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:text="Gönder" />
+</LinearLayout>
