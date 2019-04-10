@@ -18,7 +18,9 @@
         android:layout_marginBottom="1dp"
         android:backgroundTint="@color/nav_state_list"
         android:foregroundTint="@color/nav_state_list"
-        android:theme="@style/AppTheme.NoActionBar"
+
+        app:itemBackground="@color/design_default_color_primary"
+        app:itemTextColor="@color/colorAccent"
         app:menu="@menu/bottom_nav_menu" />
 
     <FrameLayout

@@ -28,7 +28,7 @@ public class OnerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_oner, container, false);
+        return inflater.inflate(R.layout.fragment_empfehlen, container, false);
     }
 
     public void onClick_oner(View v){
