@@ -20,6 +20,8 @@ public class InstructionHandler {
                 return 7;
             case "empfehlen":
                 return 8;
+            case "feedback":
+                return 9;
             default:
                 return -1;
         }

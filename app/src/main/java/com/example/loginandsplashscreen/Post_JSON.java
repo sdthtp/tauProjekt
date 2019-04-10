@@ -188,6 +188,8 @@ public class Post_JSON {
         }
     }*/
 
+
+
     //request QR-Code String from Backend and generate the image
     public static String getQRCode(String token) {
         String text = (String)readResponse("/customers/request-qr-code","Authorization",token);
@@ -199,6 +201,11 @@ public class Post_JSON {
             return null;
         }*/
         return text;
+    }
+
+    public static String feedback(int star, String feedbackText, String token){
+        String jsoned = "{\"star\": " + star + ",\"feedbackText\": \"" + feedbackText + "\" }";
+        return (String)Post_JSON(jsoned,"/customers/feedback","Authorization",token);
     }
 }
 
