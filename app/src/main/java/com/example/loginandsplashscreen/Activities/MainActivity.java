@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         checkConnectivity();
-        System.out.println("helo world");
-        System.out.println("Testmerge");
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
@@ -60,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigationView2=findViewById(R.id.bottom_nav);
         final BagisFragment bagisFragment=new BagisFragment();
-        final OnerFragment onerFragment=new OnerFragment();
+        final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
         final ParagonderFragment paragonderFragment =new ParagonderFragment();
+        final OdemeFragment odemeFragment = new OdemeFragment();
 
         navigationView2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -71,16 +70,13 @@ public class MainActivity extends AppCompatActivity {
                     setFragment(bagisFragment);
                     return true;
                 }else if(id==R.id.oner){
-                    setFragment(onerFragment);
+                    setFragment(empfehlenFragment);
                     return true;
                 }else if(id == R.id.paragonder){
                     setFragment(paragonderFragment);
                     return true;
-                } else if (id == R.id.feedback) {
-                    setFragment(paragonderFragment);
-                    return true;
                 } else if (id == R.id.odeme) {
-                    setFragment(paragonderFragment);
+                    setFragment(odemeFragment);
                     return true;
                 } else {
                     return false;
@@ -166,13 +162,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkConnectivity() {
-        boolean connected = false;
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-        }
-        else
+        if ((connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() != NetworkInfo.State.CONNECTED &&
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED)) {
             logout();
+        }
     }
 
     public void logout() {
@@ -186,8 +180,6 @@ public class MainActivity extends AppCompatActivity {
         LoginActivity.token = preferences.getString("var1",LoginActivity.token);
         if (!isInfoValid(LoginActivity.token)) {
             logout();
-        } else {
-            return;
         }
     }
 
