@@ -16,6 +16,10 @@ public class InstructionHandler {
                 return 5;
             case "requestQRCode":
                 return 6;
+            case "freeItem":
+                return 7;
+            case "empfehlen":
+                return 8;
             default:
                 return -1;
         }

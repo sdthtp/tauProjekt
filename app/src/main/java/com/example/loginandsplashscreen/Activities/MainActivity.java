@@ -157,13 +157,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkConnectivity() {
-        boolean connected = false;
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-        }
-        else
+        if ((connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() != NetworkInfo.State.CONNECTED &&
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED)) {
             logout();
+        }
     }
 
     public void logout() {
@@ -177,8 +175,6 @@ public class MainActivity extends AppCompatActivity {
         LoginActivity.token = preferences.getString("var1",LoginActivity.token);
         if (!isInfoValid(LoginActivity.token)) {
             logout();
-        } else {
-            return;
         }
     }
 
