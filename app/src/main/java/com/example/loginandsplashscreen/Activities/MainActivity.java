@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         final BagisFragment bagisFragment=new BagisFragment();
         final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
         final ParagonderFragment paragonderFragment =new ParagonderFragment();
+        final OdemeFragment odemeFragment = new OdemeFragment();
 
         navigationView2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -73,11 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 }else if(id == R.id.paragonder){
                     setFragment(paragonderFragment);
                     return true;
-                } else if (id == R.id.feedback) {
-                    setFragment(paragonderFragment);
-                    return true;
                 } else if (id == R.id.odeme) {
-                    setFragment(paragonderFragment);
+                    setFragment(odemeFragment);
                     return true;
                 } else {
                     return false;

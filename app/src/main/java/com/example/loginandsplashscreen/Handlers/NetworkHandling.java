@@ -25,7 +25,7 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
             return Post_JSON.freeItem(Integer.parseInt(json[1]), json[2], json[3]);
         } else if (operation == 8) {
             return Post_JSON.empfehlen(json[1]);
-        }else {
+        } else {
             return "Error while trying to do the operation at NetworkHandling!";
         }
     }

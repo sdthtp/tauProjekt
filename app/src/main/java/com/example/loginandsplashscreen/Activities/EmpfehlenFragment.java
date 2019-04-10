@@ -11,10 +11,6 @@ import android.widget.TextView;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class EmpfehlenFragment extends Fragment {
     private TextView ogrenciNoTextView;
 
