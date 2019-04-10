@@ -166,6 +166,13 @@ public class Post_JSON {
         String jsoned = "{\"priceid\": \"" + priceid + "\",\"amount\": " + amount + " }";
         return (String)Post_JSON(jsoned,"/customers/donate-item","Authorization",token);
     }
+
+    public static String empfehlen(String id){
+        String jsoned = "{\"id\": \"" + id + "\"}";
+        // TODO: Edit in backend
+        return (String)Post_JSON(jsoned,"/customers/forgot-password");
+    }
+
     //TODO: not used anymore
     /*public static String pay (String token) throws IOException, InterruptedException{
         String qrcode = QRCodeHandler.decodeQRCode(Post_JSON.getQRCode(token));
