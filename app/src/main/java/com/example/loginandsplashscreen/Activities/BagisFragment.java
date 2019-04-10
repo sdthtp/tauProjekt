@@ -11,10 +11,6 @@ import android.widget.TextView;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class BagisFragment extends Fragment {
 
     private TextView amounttextView;
