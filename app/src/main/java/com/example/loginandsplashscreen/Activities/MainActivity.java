@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigationView2=findViewById(R.id.bottom_nav);
         final BagisFragment bagisFragment=new BagisFragment();
-        final OnerFragment onerFragment=new OnerFragment();
+        final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
         final ParagonderFragment paragonderFragment =new ParagonderFragment();
 
         navigationView2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     setFragment(bagisFragment);
                     return true;
                 }else if(id==R.id.oner){
-                    setFragment(onerFragment);
+                    setFragment(empfehlenFragment);
                     return true;
                 }else if(id == R.id.paragonder){
                     setFragment(paragonderFragment);

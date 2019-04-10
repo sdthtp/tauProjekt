@@ -15,11 +15,11 @@ import com.example.loginandsplashscreen.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class OnerFragment extends Fragment {
+public class EmpfehlenFragment extends Fragment {
     private TextView ogrenciNoTextView;
 
 
-    public OnerFragment() {
+    public EmpfehlenFragment() {
         // Required empty public constructor
     }
 

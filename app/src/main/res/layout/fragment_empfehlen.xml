@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/ogrenciNoTextView"
         android:layout_width="402dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -58,5 +58,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/ogrenciNoTextView" />
 </android.support.constraint.ConstraintLayout>
