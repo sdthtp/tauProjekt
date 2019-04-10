@@ -11,15 +11,12 @@
         android:id="@+id/textView"
         android:layout_width="390dp"
         android:layout_height="93dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:lineSpacingExtra="8sp"
-        android:text="TextView"
+        android:text="Dikkat! Buradan Türk-Alman Üniversitesinden rastgele seçilen bir ihtiya. sahibi öğrenciye bağış yapmaktasınız. Her yemek öğün için bağış miktarı 4,00 Tl, her shuttle seyahati için ise 2,20 TL'dir."
         android:textColor="#000000"
         android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="219dp"
         tools:text="Dikkat! Buradan Türk-Alman Üniversitesinden rastgele seçilen bir ihtiya. sahibi öğrenciye bağış yapmaktasınız. Her yemek öğün için bağış miktarı 4,00 Tl, her shuttle seyahati için ise 2,20 TL'dir." />
 
     <android.support.constraint.Guideline
@@ -30,20 +27,16 @@
         app:layout_constraintGuide_percent="0.3" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="0dp"
+        android:id="@+id/amount"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Miktarı girin. (Min 1 TL)"
         android:inputType="number"
         android:textColorHint="#000000"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="336dp" />
 
     <Button
         android:id="@+id/button"
@@ -54,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/amount" />
 
     <TextView
         android:id="@+id/textView2"
@@ -68,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/amount" />
 
     <TextView
         android:id="@+id/textView4"
@@ -82,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/amount" />
 
     <Switch
         android:id="@+id/switch1"
@@ -95,6 +88,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/amount" />
 
 </android.support.constraint.ConstraintLayout>
