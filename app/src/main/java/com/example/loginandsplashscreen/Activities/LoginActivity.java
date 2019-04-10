@@ -25,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     public static String token = "";
     private AutoCompleteTextView mIDView;
     private EditText mPasswordView;
+    private View mProgressView;
+    private View mLoginFormView;
 
 
     @Override
@@ -70,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mLoginFormView = findViewById(R.id.login_form);
     }
 
 

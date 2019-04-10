@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         checkConnectivity();
-        System.out.println("helo world");
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
