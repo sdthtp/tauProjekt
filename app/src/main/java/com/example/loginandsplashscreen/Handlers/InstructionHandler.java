@@ -16,6 +16,8 @@ public class InstructionHandler {
                 return 5;
             case "requestQRCode":
                 return 6;
+            case "feedback":
+                return 9;
             default:
                 return -1;
         }

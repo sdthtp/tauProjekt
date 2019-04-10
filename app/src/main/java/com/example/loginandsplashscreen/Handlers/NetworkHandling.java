@@ -21,6 +21,9 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
             return Post_JSON.forgotPassword(json[1]);
         } else if (operation == 6) {
             return Post_JSON.getQRCode(json[1]);
+        }
+        else if (operation == 9) {
+            return Post_JSON.feedback(Integer.parseInt(json[1]), json[2], json[3]);
         } else {
             return "Error while trying to do the operation at NetworkHandling!";
         }

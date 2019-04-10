@@ -2,10 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:iconTint="#FFF"
         android:id="@+id/paragonder"
         android:icon="@drawable/ic_card_giftcard_black_24dp"
-        android:title="Para Gonder" />
+        android:iconTint="#000"
+        android:title="Para Gonder"
+        />
     <item
         android:id="@+id/feedback"
         android:icon="@drawable/ic_baseline_feedback_24px"
@@ -24,4 +25,6 @@
         android:id="@+id/oner"
         android:icon="@drawable/ic_local_offer_black_24dp"
         android:title="Oner" />
+
+
 </menu>

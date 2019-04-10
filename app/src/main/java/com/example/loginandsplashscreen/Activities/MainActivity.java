@@ -3,6 +3,7 @@ package com.example.loginandsplashscreen.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
@@ -101,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                                 startActivity(intent);
                                 break;
+                            case R.id.feedback:
+                                Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
+                                finish();
+                                startActivity(intent2);
+                                break;
                         }
 
                         // close drawer when item is tapped
@@ -116,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Listens the SideBarMenu(Drawer) actions
         mDrawerLayout.addDrawerListener(
+
                 new DrawerLayout.DrawerListener() {
                     @Override
                     public void onDrawerSlide(View drawerView, float slideOffset) {
