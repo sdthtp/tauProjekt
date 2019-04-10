@@ -7,10 +7,6 @@
         android:icon="@drawable/ic_card_giftcard_black_24dp"
         android:title="Para Gonder" />
     <item
-        android:id="@+id/feedback"
-        android:icon="@drawable/ic_baseline_feedback_24px"
-        android:title="Feedback" />
-    <item
         android:id="@+id/odeme"
         android:icon="@drawable/ic_euro_symbol"
         android:title="Ödeme" />
