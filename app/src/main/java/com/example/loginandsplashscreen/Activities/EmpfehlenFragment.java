@@ -30,12 +30,13 @@ public class EmpfehlenFragment extends Fragment {
     public void onClick_oner(View v){
         ogrenciNoTextView = (TextView) v.findViewById(R.id.ogrenciNoTextView);
 
-
         try {
             new NetworkHandling().execute("empfehlen", ogrenciNoTextView.getText().toString()).get();
         } catch (Exception e) {
             System.out.println(e);
         }
     }
+
+
 
 }

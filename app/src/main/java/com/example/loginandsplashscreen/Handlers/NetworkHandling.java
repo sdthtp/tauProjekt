@@ -20,13 +20,13 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
         } else if (operation == 5) {
             return Post_JSON.forgotPassword(json[1]);
         } else if (operation == 6) {
-            return Post_JSON.getQRCode(json[1]);
+            return Post_JSON.requestQRCode(json[1]);
         } else if (operation == 7) {
             return Post_JSON.freeItem(Integer.parseInt(json[1]), json[2], json[3]);
         } else if (operation == 8) {
             return Post_JSON.empfehlen(json[1]);
         } else if(operation == 9) {
-            return Post_JSON.feedback(Integer.parseInt(json[1]), json[2], json[3]);
+            return Post_JSON.feedback(Integer.parseInt(json[1]), json[2], json[3], json[4]);
         } else {
             return "Error while trying to do the operation at NetworkHandling!";
         }
