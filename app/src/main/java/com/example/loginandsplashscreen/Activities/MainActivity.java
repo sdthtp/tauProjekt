@@ -1,5 +1,6 @@
 package com.example.loginandsplashscreen.Activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,7 +20,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.loginandsplashscreen.JsonedClasses.Customer;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
@@ -49,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px); // sets the toggle button icon
         mDrawerLayout = findViewById(R.id.drawer);
         NavigationView navigationView = findViewById(R.id.nav_menu);
-
         try {
             o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
         } catch (Exception e) {
@@ -61,6 +63,70 @@ public class MainActivity extends AppCompatActivity {
         final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
         final ParagonderFragment paragonderFragment =new ParagonderFragment();
         final OdemeFragment odemeFragment = new OdemeFragment();
+
+        /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
+        m1showDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                View mview=getLayoutInflater().inflate(R.layout.dialog_paragonder, null);
+                Button button =(Button) mview.findViewById(R.id.paragonder_evet);
+                Button button1=(Button) mview.findViewById(R.id.paragonder_hayir);
+                Button button2=(Button) mview.findViewById(R.id.paragonder_iptal);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Para gönderildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Para gönderilmedi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "İşlem iptal edildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+
+            }
+        });
+
+        Button m2showDialog=(Button) findViewById(R.id.bu_empfehlen_onayla);
+        m2showDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                View mview=getLayoutInflater().inflate(R.layout.dialog_empfehlen, null);
+                Button button =(Button) mview.findViewById(R.id.oner_evet);
+                Button button1=(Button) mview.findViewById(R.id.oner_hayir);
+                Button button2=(Button) mview.findViewById(R.id.oner_iptal);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Kişi önerildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Kişi önerilmedi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "İşlem iptal edildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+
+            }
+        });*/
 
         navigationView2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -93,6 +159,9 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setChecked(true);
                         int d = menuItem.getItemId();
                         switch (d) {
+                            case R.id.yemeklistesi:
+                                //Intent intent3 = new Intent(MainActivity.this, YemeklistesiActivity.class);
+                                break;
                             case R.id.logout:
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                 finish();
