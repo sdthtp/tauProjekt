@@ -25,9 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     public static String token = "";
     private AutoCompleteTextView mIDView;
     private EditText mPasswordView;
-    private View mProgressView;
-    private View mLoginFormView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("var1", null);
         editor.commit();
-        mIDView = (AutoCompleteTextView) findViewById(R.id.email);
+        mIDView = findViewById(R.id.tf_login_id);
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = findViewById(R.id.tf_login_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -54,14 +51,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignInButton = (Button) findViewById(R.id.bu_login_login);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
-        Button mPwvergessen = findViewById(R.id.bu_forgotpassword);
+        Button mPwvergessen = findViewById(R.id.bu_login_forgotpassword);
         mPwvergessen.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,8 +69,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-        mLoginFormView = findViewById(R.id.login_form);
     }
 
 
@@ -128,11 +123,6 @@ public class LoginActivity extends AppCompatActivity {
             }
             NetworkHandling h2 = new NetworkHandling();
             try {
-                String t = h2.execute("requestQRCode","170503101").get();
-                String f = new NetworkHandling().execute("getInfo",token).get();
-                System.out.println(f);
-                ImageView qr_image = (ImageView) findViewById(R.id.qrcode);
-                qr_image.setImageBitmap(QRCodeHandler.generateQRCodeImage(t,200,200));
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 finish();
                 startActivity(intent);

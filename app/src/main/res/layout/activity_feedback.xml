@@ -7,7 +7,7 @@
     tools:context=".Activities.FeedbackActivity">
 
     <RatingBar
-        android:id="@+id/ratingBar2"
+        android:id="@+id/rb_feedback_stars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/tf_feedback_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -36,11 +36,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintTop_toBottomOf="@+id/rb_feedback_stars"
+        app:layout_constraintVertical_bias="0.19" />
 
     <Button
-        android:id="@+id/buttonFeedback2"
+        android:id="@+id/bu_feedback_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -51,7 +51,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/tf_feedback_text" />
+
+    <ToggleButton
+        android:id="@+id/tb_feedback_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="ToggleButton"
+        android:textOff="Mensa"
+        android:textOn="Shuttle"
+        app:layout_constraintBottom_toTopOf="@+id/tf_feedback_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.716"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb_feedback_stars"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="161dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Kommentar abgeben für:"
+        app:layout_constraintBottom_toTopOf="@+id/tf_feedback_text"
+        app:layout_constraintEnd_toStartOf="@+id/tb_feedback_type"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb_feedback_stars" />
+
 </android.support.constraint.ConstraintLayout>
-
-

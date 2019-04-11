@@ -162,8 +162,8 @@ public class Post_JSON {
     }
 
     //TODO:
-    public static String freeItem(int amount,String priceid,String token) {
-        String jsoned = "{\"priceid\": \"" + priceid + "\",\"amount\": " + amount + " }";
+    public static String freeItem(String priceid, int amount, String token) {
+        String jsoned = "{\"priceId\": \"" + priceid + "\",\"amount\": " + amount + " }";
         return (String)Post_JSON(jsoned,"/customers/donate-item","Authorization",token);
     }
 
@@ -204,8 +204,9 @@ public class Post_JSON {
     }
 
     public static String feedback(int star, String type, String feedbackText, String token){
-        String jsoned = "{\"star\": " + star + ",\"type\": \"" + type + "\", \"feedbackText\": \"" + feedbackText + "\" }";
+        feedbackText = feedbackText.replaceAll("\n"," ");
+        String jsoned = "{\"star\": " + star + ",\"type\": \"" + type + "\",\"text\": \"" + feedbackText + "\"}";
+        System.out.println(jsoned);
         return (String)Post_JSON(jsoned,"/customers/feedback","Authorization",token);
     }
 }
-

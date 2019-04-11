@@ -1,6 +1,7 @@
 package com.example.loginandsplashscreen.Handlers;
 
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import com.example.loginandsplashscreen.Handlers.InstructionHandler;
 import com.example.loginandsplashscreen.Post_JSON;
@@ -22,10 +23,10 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
         } else if (operation == 6) {
             return Post_JSON.requestQRCode(json[1]);
         } else if (operation == 7) {
-            return Post_JSON.freeItem(Integer.parseInt(json[1]), json[2], json[3]);
+            return Post_JSON.freeItem(json[1], Integer.parseInt(json[2]), json[3]);
         } else if (operation == 8) {
             return Post_JSON.empfehlen(json[1]);
-        } else if(operation == 9) {
+        } else if (operation == 9) {
             return Post_JSON.feedback(Integer.parseInt(json[1]), json[2], json[3], json[4]);
         } else {
             return "Error while trying to do the operation at NetworkHandling!";
@@ -33,7 +34,6 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
     }
 
     protected void onPreExecute(Void test) {
-
     }
 
     protected String onPostExecute(String... result) {

@@ -16,10 +16,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
-import com.example.loginandsplashscreen.Handlers.QRCodeHandler;
 import com.example.loginandsplashscreen.R;
-
-import org.w3c.dom.Text;
 
 public class FeedbackActivity extends AppCompatActivity {
 
@@ -32,22 +29,7 @@ public class FeedbackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
-
-
-
-        /*Button feedbackButton = (Button) findViewById(R.id.buttonFeedback2);
-        feedbackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendFeedback();
-            }
-        });*/
     }
-
-    /*private void sendFeedback() {
-
-
-    }*/
 
     public void showAlertDialog(View v){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -65,31 +47,28 @@ public class FeedbackActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
-                    myRatingBar = (RatingBar) findViewById(R.id.ratingBar2);
-                    commentField = (EditText) findViewById(R.id.editText2);
-                    //toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+                    myRatingBar = (RatingBar) findViewById(R.id.rb_feedback_stars);
+                    commentField = (EditText) findViewById(R.id.tf_feedback_text);
 
-                    //boolean checked = ((ToggleButton)v).isChecked();
-
-                    String star = String.valueOf(myRatingBar.getRating());;
+                    String star = String.valueOf(myRatingBar.getRating());
                     star = star.substring(0,1);
                     String text = commentField.getText().toString();
-                    NetworkHandling h = new NetworkHandling();
-                    try {
-                        //h.execute("feedback",star,text,token).get();
+                    System.out.println(text);
 
-                        /*if(checked){
-                            String f = new NetworkHandling().execute("feedback",star,"mensa",text,LoginActivity.token).get();
-                            System.out.println(f);
+                    NetworkHandling h = new NetworkHandling();
+
+                    try {
+                        String type;
+                        ToggleButton b = findViewById(R.id.tb_feedback_type);
+                        if (b.isChecked()) {
+                            type = "shuttle";
+                        } else {
+                            type = "mensa";
                         }
-                        else{
-                            String f = new NetworkHandling().execute("feedback",star,"shuttle",text,LoginActivity.token).get();
-                            System.out.println(f);
-                        }*/
+                        String f = new NetworkHandling().execute("feedback",star,type,text,LoginActivity.token).get();
                     } catch (Exception e) {
                         System.out.println(e);
                     }
-
                     Toast.makeText(FeedbackActivity.this, "Feedback sent", Toast.LENGTH_SHORT).show();
                 }
             });
