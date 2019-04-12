@@ -54,16 +54,16 @@ public class FeedbackActivity extends AppCompatActivity {
     public void showAlertDialog(View v){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Feedback");
-            alert.setMessage("Wollen Sie den Feedback senden?");
+            alert.setMessage("Değerlendirmeyi göndermek istiyormusunuz?");
 
-            alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            alert.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(FeedbackActivity.this, "Feedback not sent", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedbackActivity.this, "Değerlendirme gönderilmedi", Toast.LENGTH_SHORT).show();
                 }
             });
 
-            alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            alert.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
@@ -71,7 +71,7 @@ public class FeedbackActivity extends AppCompatActivity {
                     commentField = (EditText) findViewById(R.id.tf_feedback_text);
 
                     String star = String.valueOf(myRatingBar.getRating());
-                    final String star2 = star.substring(0,1);
+                    star = star.substring(0,1);
                     String text = commentField.getText().toString();
                     System.out.println(text);
 
@@ -89,7 +89,7 @@ public class FeedbackActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         System.out.println(e);
                     }
-                    Toast.makeText(FeedbackActivity.this, "Feedback sent", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedbackActivity.this, "Değerlendirme gönderildi", Toast.LENGTH_SHORT).show();
                 }
             });
             alert.create().show();

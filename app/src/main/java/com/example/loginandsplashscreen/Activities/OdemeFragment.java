@@ -44,7 +44,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
 
         TextView t = (TextView) myView.findViewById(R.id.bezahlenName);
         try {
-            t.setText("Name: " + cst.getName());
+            t.setText("İsim: " + cst.getName());
             t = (TextView) myView.findViewById(R.id.bezahlenID);
             t.setText("ID: " + cst.getId());
             t = (TextView) myView.findViewById(R.id.bezahlenMensaBakiye);
@@ -61,7 +61,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        Toast.makeText(getActivity(), "QR-Code generated!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "QR-Image generated!", Toast.LENGTH_LONG).show();
 
         try {
             String response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();

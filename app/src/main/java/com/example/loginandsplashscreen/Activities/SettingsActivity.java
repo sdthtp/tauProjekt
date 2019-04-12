@@ -66,30 +66,36 @@ public class SettingsActivity extends AppCompatActivity {
                 // Inflate and set the layout for the dialog
                 // Pass null as the parent view because its going in the dialog layout
 
-                builder.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("İptal Et", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(SettingsActivity.this, "Abgebrochen", Toast.LENGTH_SHORT).show();
                     }
                 });
 
-                builder.setPositiveButton("Ändern", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Değiştir", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         EditText altespasswort = ((AlertDialog) dialog).findViewById(R.id.tf_changepassword_old);
                         EditText neuespasswort = ((AlertDialog) dialog).findViewById(R.id.tf_changepassword_new);
+                        EditText neuespasswortconfirm = ((AlertDialog) dialog).findViewById(R.id.tf_changepassword_new_confirm);
                         String alt = altespasswort.getText().toString();
                         String neu = neuespasswort.getText().toString();
+                        String neuconfirm = neuespasswortconfirm.getText().toString();
 
                         NetworkHandling h = new NetworkHandling();
 
                         try {
-                            String f = new NetworkHandling().execute("changePassword",alt,neu,LoginActivity.token).get();
-                            System.out.println(f);
+                            if(!neu.equals(neuconfirm)){
+                                Toast.makeText(SettingsActivity.this, "Şifre uyuşmuyor", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                String f = new NetworkHandling().execute("changePassword",alt,neu,LoginActivity.token).get();
+                                System.out.println(f);
+                                Toast.makeText(SettingsActivity.this, "Şifre değiştirildi", Toast.LENGTH_SHORT).show();
+                            }
                         } catch (Exception e) {
                             System.out.println(e);
                         }
-                        Toast.makeText(SettingsActivity.this, "Password changed", Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.setView(R.layout.dialog_changepassword); AlertDialog l = builder.create();
