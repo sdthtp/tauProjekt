@@ -39,8 +39,7 @@ public class FeedbackActivity extends AppCompatActivity {
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
-
-
+        
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +74,6 @@ public class FeedbackActivity extends AppCompatActivity {
                     final String star2 = star.substring(0,1);
                     String text = commentField.getText().toString();
                     System.out.println(text);
-
 
                     NetworkHandling h = new NetworkHandling();
 
