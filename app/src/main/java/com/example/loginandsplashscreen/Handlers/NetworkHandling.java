@@ -15,7 +15,7 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
         } else if (operation == 2) {
             return Post_JSON.getInfo(json[1]);
         } else if (operation == 3) {
-            return Post_JSON.changepassword(json[1],json[2]);
+            return Post_JSON.changepassword(json[1],json[2],json[3]);
         } else if (operation == 4) {
             return Post_JSON.transfer(json[1],json[2],Integer.parseInt(json[3]),json[4]);
         } else if (operation == 5) {

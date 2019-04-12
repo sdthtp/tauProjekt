@@ -21,6 +21,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +35,7 @@ import com.google.gson.Gson;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout2;
     Customer o = null;
 
     @Override
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px); // sets the toggle button icon
         mDrawerLayout = findViewById(R.id.drawer);
+        //mDrawerLayout2 = findViewById(R.id.drawer2);
         NavigationView navigationView = findViewById(R.id.nav_menu);
         try {
             o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
@@ -64,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
         final ParagonderFragment paragonderFragment =new ParagonderFragment();
         final OdemeFragment odemeFragment = new OdemeFragment();
+
 
         /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
         m1showDialog.setOnClickListener(new View.OnClickListener() {
@@ -160,6 +165,11 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setChecked(true);
                         int d = menuItem.getItemId();
                         switch (d) {
+                            case R.id.ayarlar:
+                                Intent intent5 = new Intent(MainActivity.this, SettingsActivity.class);
+                                finish();
+                                startActivity(intent5);
+                                break;
                             case R.id.yemeklistesi:
                                 //Intent intent3 = new Intent(MainActivity.this, YemeklistesiActivity.class);
                                 break;
@@ -265,6 +275,24 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+
+    /*@Override
+    /*public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        MenuItem item = menu.findItem(R.id.action_settings);
+
+        if(item != null){
+            item.getActionView().setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    System.out.println("hallohallo");
+                }
+            });
+        }
+        return true;
+    }*/
+
     //Open drawer when the button is tapped
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -275,6 +303,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
