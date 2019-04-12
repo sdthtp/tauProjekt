@@ -22,6 +22,8 @@ public class InstructionHandler {
                 return 8;
             case "feedback":
                 return 9;
+            case "yemeklistesi":
+                return 10;
             default:
                 return -1;
         }

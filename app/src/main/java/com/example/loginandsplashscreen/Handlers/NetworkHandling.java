@@ -6,6 +6,11 @@ import android.widget.Toast;
 import com.example.loginandsplashscreen.Handlers.InstructionHandler;
 import com.example.loginandsplashscreen.Post_JSON;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 public class NetworkHandling extends AsyncTask<String,Void,String> {
 
     protected String doInBackground(String... param) {
@@ -28,7 +33,16 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
             return Post_JSON.empfehlen(param[1]);
         } else if (operation == 9) {
             return Post_JSON.feedback(Integer.parseInt(param[1]), param[2], param[3], param[4]);
-        } else {
+        } else if (operation == 10) {
+            try {
+                Document doc = Jsoup.connect("http://www.tau.edu.tr/saglikkulturspor/yemek_menusu").get();
+                return doc.body().getElementsByTag("table").get(0).text();
+            } catch (Exception e) {
+                return "Error while trying to resolve tau.edu.tr";
+            }
+
+        }
+        else {
             return "Error while trying to do the operation at NetworkHandling!";
         }
     }

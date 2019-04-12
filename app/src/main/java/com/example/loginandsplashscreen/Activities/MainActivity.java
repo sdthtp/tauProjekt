@@ -170,9 +170,11 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                                 startActivity(intent5);
                                 break;
-                            case R.id.yemeklistesi:
+                            /*case R.id.yemeklistesi:
+                                final YemekListeFragment yemekListeFragment = new YemekListeFragment();
+                                setFragment(yemekListeFragment);
+                                break;*/
                                 //Intent intent3 = new Intent(MainActivity.this, YemeklistesiActivity.class);
-                                break;
                             case R.id.logout:
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                 finish();
