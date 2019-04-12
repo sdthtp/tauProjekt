@@ -33,6 +33,15 @@ public class SettingsActivity extends AppCompatActivity {
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.settingsToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
 
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+
         Button logout = (Button) findViewById(R.id.logoutBtn);
         Button changePassword = (Button) findViewById(R.id.passwordChangeBtn);
 

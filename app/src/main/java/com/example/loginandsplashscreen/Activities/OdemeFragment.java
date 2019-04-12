@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Button;
 import android.graphics.Bitmap;
+import android.widget.Toast;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.Handlers.QRCodeHandler;
@@ -60,6 +61,8 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onClick(View v) {
+        Toast.makeText(getActivity(), "Hallo", Toast.LENGTH_LONG).show();
+
         try {
             String response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
             System.out.println(response);
