@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         final OdemeFragment odemeFragment = new OdemeFragment();
 
 
+        setFragment(paragonderFragment);
+
         /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
         m1showDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,16 +172,18 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                                 startActivity(intent5);
                                 break;
+                                //TODO: will be implemented later
                             /*case R.id.yemeklistesi:
                                 final YemekListeFragment yemekListeFragment = new YemekListeFragment();
                                 setFragment(yemekListeFragment);
                                 break;*/
                                 //Intent intent3 = new Intent(MainActivity.this, YemeklistesiActivity.class);
-                            case R.id.logout:
+                            //TODO: to be found in settings
+                            /*case R.id.logout:
                                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                                 finish();
                                 startActivity(intent);
-                                break;
+                                break;*/
                             case R.id.feedback:
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
                                 finish();
