@@ -53,13 +53,9 @@ public class SettingsActivity extends AppCompatActivity {
 
                 LayoutInflater inflater = SettingsActivity.this.getLayoutInflater();
 
-                final EditText altespasswort = (EditText) findViewById(R.id.editText2);
-                final EditText neuespasswort = (EditText) findViewById(R.id.editText3);
-
 
                 // Inflate and set the layout for the dialog
                 // Pass null as the parent view because its going in the dialog layout
-                builder.setView(inflater.inflate(R.layout.dialog_changepassword, null));
 
                 builder.setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
                     @Override
@@ -71,24 +67,26 @@ public class SettingsActivity extends AppCompatActivity {
                 builder.setPositiveButton("Ändern", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
-
+                        EditText altespasswort = ((AlertDialog) dialog).findViewById(R.id.tf_changepassword_old);
+                        EditText neuespasswort = ((AlertDialog) dialog).findViewById(R.id.tf_changepassword_new);
                         String alt = altespasswort.getText().toString();
                         String neu = neuespasswort.getText().toString();
 
                         NetworkHandling h = new NetworkHandling();
 
                         try {
-                            String f = new NetworkHandling().execute("changepassword",alt,neu,LoginActivity.token).get();
+                            String f = new NetworkHandling().execute("changePassword",alt,neu,LoginActivity.token).get();
                             System.out.println(f);
                         } catch (Exception e) {
                             System.out.println(e);
                         }
-                        Toast.makeText(SettingsActivity.this, "Feedback sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingsActivity.this, "Password changed", Toast.LENGTH_SHORT).show();
                     }
                 });
+                builder.setView(R.layout.dialog_changepassword); AlertDialog l = builder.create();
+                l.show();
 
-                builder.create().show();
+
             }
         });
     }

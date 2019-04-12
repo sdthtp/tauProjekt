@@ -152,7 +152,7 @@ public class Post_JSON {
     }
 
     public static String changepassword(String oldPass, String newPass, String token) {
-        String jsoned = "{\"oldpass\":\""+ oldPass + "\" + \"newPass\": \"" + newPass + "\" }";
+        String jsoned = "{\"oldPass\":\""+ oldPass + "\", \"newPass\": \"" + newPass + "\" }";
         return (String)Post_JSON(jsoned,"/customers/change-password","Authorization",token);
     }
 

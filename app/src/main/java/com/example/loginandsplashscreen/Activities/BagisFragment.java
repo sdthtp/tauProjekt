@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
@@ -47,6 +48,7 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
         }
         try {
             System.out.println(new NetworkHandling().execute("freeItem", balanceId, amounttextView.getText() + "", token).get());
+            Toast.makeText(getView().getContext(), "Bagisiniz kabul edilmistir. Allah razi olsun!",Toast.LENGTH_SHORT ).show();
         } catch (Exception e) {
             System.out.println(e);
         }

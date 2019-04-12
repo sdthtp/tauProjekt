@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
@@ -37,6 +38,7 @@ public class EmpfehlenFragment extends Fragment implements View.OnClickListener 
 
         try {
             System.out.println(new NetworkHandling().execute("empfehlen", ogrenciNoTextView.getText() + "").get());
+            Toast.makeText(getView().getContext(), "Kisi önerilmistir",Toast.LENGTH_SHORT ).show();
         } catch (Exception e) {
             System.out.println(e);
         }
