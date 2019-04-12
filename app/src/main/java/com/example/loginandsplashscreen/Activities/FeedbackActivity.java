@@ -38,8 +38,18 @@ public class FeedbackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feedback);
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-    }
+        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
 
+
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FeedbackActivity.this, MainActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
+    }
 
 
     public void showAlertDialog(View v){
@@ -62,9 +72,10 @@ public class FeedbackActivity extends AppCompatActivity {
                     commentField = (EditText) findViewById(R.id.tf_feedback_text);
 
                     String star = String.valueOf(myRatingBar.getRating());
-                    star = star.substring(0,1);
+                    final String star2 = star.substring(0,1);
                     String text = commentField.getText().toString();
                     System.out.println(text);
+
 
                     NetworkHandling h = new NetworkHandling();
 

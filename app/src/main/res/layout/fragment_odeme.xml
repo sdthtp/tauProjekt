@@ -14,14 +14,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:gravity="left"
+        android:gravity="top"
         android:text="TextView"
+        android:textFontWeight=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintVertical_bias="0.152" />
 
     <TextView
         android:id="@+id/bezahlenMensaBakiye"
@@ -34,55 +34,56 @@
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262" />
+        app:layout_constraintVertical_bias="0.271" />
 
-        <TextView
-            android:id="@+id/bezahlenShuttleBakiye"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.205"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bezahlenMensaBakiye"
-            app:layout_constraintVertical_bias="0.006" />
-
-        <TextView
-            android:id="@+id/bezahlenID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.205"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bezahlenName" />
-
-    <Button
-        android:id="@+id/bezahlenBtn"
+    <TextView
+        android:id="@+id/bezahlenShuttleBakiye"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bezahlenMensaBakiye"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <TextView
+        android:id="@+id/bezahlenID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bezahlenName" />
+
+    <Button
+        android:id="@+id/bezahlenBtn"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/buttonbackround"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+
         android:text="Bezahlen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.401" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -96,7 +97,7 @@
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759"
+        app:layout_constraintVertical_bias="0.858"
         tools:srcCompat="@tools:sample/avatars" />
 
 
