@@ -61,7 +61,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        Toast.makeText(getActivity(), "Hallo", Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "QR-Code generated!", Toast.LENGTH_LONG).show();
 
         try {
             String response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
