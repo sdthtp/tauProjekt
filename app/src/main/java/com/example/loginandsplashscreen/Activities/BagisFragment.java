@@ -48,6 +48,7 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
         }
         try {
             System.out.println(new NetworkHandling().execute("freeItem", balanceId, amounttextView.getText() + "", token).get());
+            //TODO: implement correct responsehandling (e.g. if insufficient balance)
             Toast.makeText(getView().getContext(), "Bagisiniz kabul edilmistir. Allah razi olsun!",Toast.LENGTH_SHORT ).show();
         } catch (Exception e) {
             System.out.println(e);

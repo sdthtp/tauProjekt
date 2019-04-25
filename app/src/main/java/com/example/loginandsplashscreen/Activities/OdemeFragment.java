@@ -2,14 +2,17 @@ package com.example.loginandsplashscreen.Activities;
 
 import android.media.Image;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Button;
 import android.graphics.Bitmap;
@@ -22,6 +25,12 @@ import com.example.loginandsplashscreen.R;
 import com.google.gson.Gson;
 
 public class OdemeFragment extends Fragment implements View.OnClickListener {
+    ProgressBar mProgressBar;
+    CountDownTimer mCountDownTimer;
+    int i=0;
+    String response;
+
+
 
     public OdemeFragment() {
         // Required empty public constructor
@@ -35,42 +44,57 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
         Customer cst = null;
         Button bezahlen;
 
-        try {
-            cst = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
 
         TextView t = (TextView) myView.findViewById(R.id.bezahlenName);
-        try {
-            t.setText("İsim: " + cst.getName());
-            t = (TextView) myView.findViewById(R.id.bezahlenID);
-            t.setText("ID: " + cst.getId());
-            t = (TextView) myView.findViewById(R.id.bezahlenMensaBakiye);
-            t.setText("Mensa Bakiye: " + cst.getBalanceMensa());
-            t = (TextView) myView.findViewById(R.id.bezahlenShuttleBakiye);
-            t.setText("Shuttle Bakiye: " + cst.getBalanceShuttle());
-        } catch (Exception e) {
-            System.out.println(e);
-        }
 
         //bezahlen = (Button) myView.findViewById(R.id.bezahlenBtn);
         //bezahlen.setOnClickListener(this);
         return myView;
     }
 
+    public void startTimer(View v) {
+        mProgressBar=v.findViewById(R.id.pb_odeme);
+        mProgressBar.setProgress(i);
+        mCountDownTimer=new CountDownTimer(30000,1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                i++;
+                mProgressBar.setProgress(i*100/(30000/1000));
+                try {
+                    String check;
+                    check = new NetworkHandling().execute("isPaid",response,LoginActivity.token).get();
+                    System.out.println(check);
+                    if (check.equals("true")) {
+                        mCountDownTimer.cancel();
+                        mProgressBar.setProgress(100);
+                        i=0;
+                    }
+                } catch (Exception e) {
+                    System.out.println("Error while trying to check whether Payment was complete! " + e);
+                }
+
+            }
+
+            @Override
+            public void onFinish() {
+                System.out.println("Payment could not be processed!");
+                i++;
+                mProgressBar.setProgress(100);
+                i=0;
+            }
+        };
+        mCountDownTimer.start();
+    }
+
     public void onClick(View v) {
-        Toast.makeText(getActivity(), "QR-Image generated!", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(getActivity(),"QR-Image generated!", Toast.LENGTH_LONG).show();
         try {
-            String response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
-            System.out.println(response);
-
+            response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
             Bitmap bmp = new QRCodeHandler().generateQRCodeImage(response, 700,700);
             ImageView img =  v.getRootView().findViewById(R.id.imageView2);
             img.setImageBitmap(bmp);
-
+            startTimer(getView());
 
         } catch (Exception e) {
             System.out.println(e);

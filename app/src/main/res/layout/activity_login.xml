@@ -57,7 +57,7 @@
                     android:id="@+id/tf_login_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Passwort"
+                    android:hint="Sifre"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -73,14 +73,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Einloggen"
+                android:text="Giris yap"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/bu_login_forgotpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Passwort vergessen" />
+                android:text="Sifremi unuttum" />
 
         </LinearLayout>
     </ScrollView>

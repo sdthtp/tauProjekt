@@ -172,17 +172,10 @@ public class MainActivity extends AppCompatActivity {
                                 finish();
                                 startActivity(intent5);
                                 break;
-                                //TODO: will be implemented later
                             /*case R.id.yemeklistesi:
                                 final YemekListeFragment yemekListeFragment = new YemekListeFragment();
                                 setFragment(yemekListeFragment);
-                                break;*/
-                                //Intent intent3 = new Intent(MainActivity.this, YemeklistesiActivity.class);
-                            //TODO: to be found in settings
-                            /*case R.id.logout:
-                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                                finish();
-                                startActivity(intent);
+                                Intent intent = new Intent(MainActivity.this,YemekListeActivity.class);
                                 break;*/
                             case R.id.feedback:
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
@@ -217,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
                         TextView t = drawerView.findViewById(R.id.user_name);
                     try {
+                        //TODO: Tell backend to round off the numbers to two commas
                         t.setText(o.getName());
                         t = drawerView.findViewById(R.id.ogrenci_numarasi);
                         t.setText(o.getId());

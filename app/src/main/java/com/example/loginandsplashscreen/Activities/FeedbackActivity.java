@@ -72,6 +72,9 @@ public class FeedbackActivity extends AppCompatActivity {
 
                     String star = String.valueOf(myRatingBar.getRating());
                     star = star.substring(0,1);
+                    if (star.equals("0")) {
+                        //TODO: implement cancellation if trying to send 0 stars
+                    }
                     String text = commentField.getText().toString();
                     System.out.println(text);
 

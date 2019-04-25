@@ -173,6 +173,16 @@ public class Post_JSON {
         return (String)Post_JSON(jsoned,"/customers/forgot-password");
     }
 
+    public static String isPaid(String qrcode, String token) {
+        String jsoned = "{\"qrCode\": \"" + qrcode + "\" }";
+        String k = (String)Post_JSON.Post_JSON(jsoned,"/customers/is-paid","Authorization",token);
+        if (k.equals("true")) {
+            return "true";
+        } else {
+            return "false";
+        }
+    }
+
     //TODO: not used anymore
     /*public static String pay (String token) throws IOException, InterruptedException{
         String qrcode = QRCodeHandler.decodeQRCode(Post_JSON.getQRCode(token));

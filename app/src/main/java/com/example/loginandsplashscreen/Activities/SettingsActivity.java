@@ -42,6 +42,9 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+
+        //TODO: implement onClickListener for language togglebutton and implement its function
+
         Button logout = (Button) findViewById(R.id.logoutBtn);
         Button changePassword = (Button) findViewById(R.id.passwordChangeBtn);
 

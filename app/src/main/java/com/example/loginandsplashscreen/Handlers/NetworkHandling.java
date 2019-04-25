@@ -38,7 +38,9 @@ public class NetworkHandling extends AsyncTask<String,Void,String> {
             }*/
 
         //}
-        else {
+        else if (operation == 11) {
+            return Post_JSON.isPaid(param[1],param[2]);
+        } else {
             return "Error while trying to do the operation at NetworkHandling!";
         }
     }

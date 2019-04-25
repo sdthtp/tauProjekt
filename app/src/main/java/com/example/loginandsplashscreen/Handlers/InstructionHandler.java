@@ -24,6 +24,8 @@ public class InstructionHandler {
                 return 9;
             case "yemeklistesi":
                 return 10;
+            case "isPaid":
+                return 11;
             default:
                 return -1;
         }
