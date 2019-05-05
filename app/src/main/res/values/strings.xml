@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">LoginandSplashscreen</string>
-    <!-- TODO: Implement all hardcoded Strings in here with Turkish AND German translation! -->
     <string name="prompt_email">E-mail</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
