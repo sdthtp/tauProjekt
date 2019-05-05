@@ -179,8 +179,8 @@ public class MainActivity extends AppCompatActivity {
                                 break;*/
                             case R.id.feedback:
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
-                                finish();
                                 startActivity(intent2);
+                                finish();
                                 break;
                         }
 

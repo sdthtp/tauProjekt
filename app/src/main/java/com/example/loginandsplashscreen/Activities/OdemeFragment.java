@@ -23,8 +23,14 @@ import com.example.loginandsplashscreen.Handlers.QRCodeHandler;
 import com.example.loginandsplashscreen.JsonedClasses.Customer;
 import com.example.loginandsplashscreen.R;
 import com.google.gson.Gson;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
+
 
 public class OdemeFragment extends Fragment implements View.OnClickListener {
+
     ProgressBar mProgressBar;
     CountDownTimer mCountDownTimer;
     int i=0;
@@ -43,7 +49,6 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
 
         Customer cst = null;
         Button bezahlen;
-
 
         TextView t = (TextView) myView.findViewById(R.id.bezahlenName);
 
@@ -88,13 +93,18 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        Toast.makeText(getActivity(),"QR-Image generated!", Toast.LENGTH_LONG).show();
         try {
             response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
-            Bitmap bmp = new QRCodeHandler().generateQRCodeImage(response, 700,700);
-            ImageView img =  v.getRootView().findViewById(R.id.imageView2);
+
+            /*Bitmap bmp = new QRCodeHandler().generateQRCodeImage(response, 700,700);
             img.setImageBitmap(bmp);
-            startTimer(getView());
+            startTimer(getView());*/
+            ImageView img =  v.getRootView().findViewById(R.id.imageView2);
+            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+            BitMatrix bitMatrix = multiFormatWriter.encode(response, BarcodeFormat.QR_CODE,300,300);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmpap = barcodeEncoder.createBitmap(bitMatrix);
+            img.setImageBitmap(bitmpap);
 
         } catch (Exception e) {
             System.out.println(e);
