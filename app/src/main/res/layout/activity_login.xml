@@ -42,7 +42,7 @@
                     android:id="@+id/tf_login_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="ID"
+                    android:hint="@string/id"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -57,7 +57,7 @@
                     android:id="@+id/tf_login_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Sifre"
+                    android:hint="@string/sifre"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -73,14 +73,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Giris yap"
+                android:text="@string/giris_yap"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/bu_login_forgotpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sifremi unuttum" />
+                android:text="@string/sifremi_unuttum" />
 
         </LinearLayout>
     </ScrollView>

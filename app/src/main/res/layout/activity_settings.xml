@@ -36,15 +36,15 @@
         app:layout_constraintVertical_bias="0.191">
 
         <ToggleButton
-            android:id="@+id/toggleButton2"
+            android:id="@+id/toggleButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="ToggleButton"
-            android:textOff="Almanca"
-            android:textOn="Türkçe"
+            android:text="@string/togglebutton"
+            android:textOff="@string/almanca"
+            android:textOn="@string/t_rk_e"
             app:layout_constraintBottom_toTopOf="@+id/passwordChangeBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.244"
@@ -59,7 +59,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Şifre Değiştir"
+            android:text="@string/ifre_de_i_tir"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.154"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -71,12 +71,11 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Çıkış Yap"
+            android:text="@string/k_yap"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.144"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordChangeBtn" />
-
 
     </LinearLayout>
 
