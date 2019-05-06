@@ -23,8 +23,8 @@ import static com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage;
 
 public class QRCodeHandler {
 
-
-    //generate qr code image of given text
+/*
+    //generate qr code image of given text TODO: not used anymore
     public static Bitmap generateQRCodeImage(String text, int width, int height) throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
