@@ -19,14 +19,14 @@ import android.graphics.Bitmap;
 import android.widget.Toast;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
-import com.example.loginandsplashscreen.Handlers.QRCodeHandler;
+import com.example.loginandsplashscreen.Handlers.QRCodeEncoder;
 import com.example.loginandsplashscreen.JsonedClasses.Customer;
 import com.example.loginandsplashscreen.R;
 import com.google.gson.Gson;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.google.zxing.qrcode.encoder.QRCode;
 
 
 public class OdemeFragment extends Fragment implements View.OnClickListener {
@@ -95,17 +95,13 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         try {
             response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
-
-            /*Bitmap bmp = new QRCodeHandler().generateQRCodeImage(response, 700,700);
-            img.setImageBitmap(bmp);
-            startTimer(getView());*/
+            startTimer(getView());
             ImageView img =  v.getRootView().findViewById(R.id.imageView2);
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             BitMatrix bitMatrix = multiFormatWriter.encode(response, BarcodeFormat.QR_CODE,300,300);
-            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-            Bitmap bitmpap = barcodeEncoder.createBitmap(bitMatrix);
+            QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
+            Bitmap bitmpap = qrCodeEncoder.createBitmap(bitMatrix);
             img.setImageBitmap(bitmpap);
-
         } catch (Exception e) {
             System.out.println(e);
         }

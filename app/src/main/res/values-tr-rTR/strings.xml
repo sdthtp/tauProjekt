@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LoginandSplashscreen</string>
+    <string name="app_name">Tau-Pay</string>
     <string name="action_sign_in">Giriş Yap veya Kayıt Ol</string>
     <string name="action_sign_in_short">Giriş Yap</string>
     <string name="ad_soyad">Ad, Soyad:</string>

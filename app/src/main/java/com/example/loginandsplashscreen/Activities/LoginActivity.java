@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
-import com.example.loginandsplashscreen.Handlers.QRCodeHandler;
 import com.example.loginandsplashscreen.R;
 
 
