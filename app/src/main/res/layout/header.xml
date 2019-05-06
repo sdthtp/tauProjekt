@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ad Soyad:"
+                android:text="@string/ad_soyad"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yemek Bakiyesi:"
+                android:text="@string/yemek_bakiyesi"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold"
                 android:paddingTop="15dp" />
@@ -59,7 +59,7 @@
                 android:id="@+id/yemek_bakiye"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXX.XX TL"
+                android:text="@string/xx_xx_tl"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -74,7 +74,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Numarası:"
+                android:text="@string/numaras"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold" />
 
@@ -82,14 +82,14 @@
                 android:id="@+id/ogrenci_numarasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="160503131"
+                android:text="@string/_160503131"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shuttle Bakiyesi:"
+                android:text="@string/shuttle_bakiyesi"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold"
                 android:paddingTop="15dp" />
@@ -98,7 +98,7 @@
                 android:id="@+id/shuttle_bakiye"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XXX.XX TL"
+                android:text="@string/xxx_xx_tl"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold" />
         </LinearLayout>
