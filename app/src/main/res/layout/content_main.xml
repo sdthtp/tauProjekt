@@ -19,8 +19,9 @@
         android:backgroundTint="@color/black"
         android:foregroundTint="@color/black"
 
-        app:itemBackground="@color/end"
-        app:itemTextColor="@color/colorWhite"
+        app:itemBackground="@color/tdu"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
         app:menu="@menu/bottom_nav_menu" />
 
     <FrameLayout

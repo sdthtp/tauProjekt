@@ -64,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     Intent intent = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
                     startActivity(intent);
-                    //new NetworkHandling().execute("forgotPassword",mIDView.getText().toString()).get();
                 } catch (Exception e) {
                     System.out.println(e);
                 }

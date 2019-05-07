@@ -15,13 +15,15 @@ import com.example.loginandsplashscreen.R;
 public class ForgotPasswordActivity extends AppCompatActivity {
 
 
-    AutoCompleteTextView text = findViewById(R.id.tf_forgotpassword_id);
+    AutoCompleteTextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         Button send = findViewById(R.id.bu_forgotpassword_send);
+
+        text = findViewById(R.id.tf_forgotpassword_id);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

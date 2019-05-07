@@ -28,12 +28,13 @@
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          >
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#000000"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+         <android.support.v7.widget.Toolbar
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             android:background="@color/tdu"
+             android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
      </FrameLayout>
     <include layout="@layout/content_main" />

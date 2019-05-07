@@ -29,13 +29,13 @@
     <string name="yeni_sifre_onayla">Confirm new password</string>
     <string name="bu_kisiyi_onermek_istediginize_emin_misiniz">Are you sure you want to suggest this person?</string>
     <string name="evet">Yes</string>
-    <string name="hayır">No</string>
+    <string name="hayir">No</string>
     <string name="bu_kisiye_para_gondermeye_devam_etmek_istiyor_musunuz">Would you like to continue to send money to this person?</string>
-    <string name="dikkat_buradan_turk_alman_universitesinden_rastgele_secilen_bir_ihtiyac_sahibi_ogrenciye_bagis_yapabilirsiniz_her_yemek_n_i_in_ba_miktar_4_00_tl_her_shuttle_seyahati_i_in_ise_2_20_tl_dir">Attention! Here you can donate a randomly selected student of the Turkish-German University. The amount of donations for each meal is 4.00 TL and for each shuttle 2.20 TL.</string>
+    <string name="dikkatspenden">Attention! Here you can donate a randomly selected student of the Turkish-German University. The amount of donations for each meal is 4.00 TL and for each shuttle 2.20 TL.</string>
     <string name="miktar_en_az_1_adet">Amount (min. 1 piece)</string>
-    <string name="hiermit_empfehlen_sie_einen_studenten_damit_dieser_in_die_hilsbed_rftigen_liste_eingeht_falls_genug_leute_diese_person_empfehlen_wird_sie_in_die_liste_aufgenommen_und_ebenfalls_f_r_kostenlose_mahzeiten_qualifiziert_sein">Hereby recommend a student to be included in the list of need. If enough people recommend this person, they will be added to the list and also qualified for free meals.</string>
+    <string name="dikkatempfehlen">Hereby recommend a student to be included in the list of need. If enough people recommend this person, they will be added to the list and also qualified for free meals.</string>
     <string name="odeme_yap">Submit Payment</string>
-    <string name="buradan_arkadasinizin_veya_tanidiginizin_numarasini_girerek_para_gonderebilirsiniz">Here you can send money by entering the number of your friend.</string>
+    <string name="dikkatparagonder">Here you can send money by entering the number of your friend.</string>
     <string name="ogrenci_numarasi">Matriculation Number</string>
     <string name="miktar">Amount</string>
     <string name="gonder">Send</string>
@@ -50,7 +50,7 @@
     <string name="forgotpassword">Here you can reset your password. Enter your Identification Number here. The instructions to reset your password will be sent to your E-Mail</string>
     <string name="numarası">Number:</string>
     <string name="shuttle_bakiyesi">Shuttle Balance:</string>
-    <string name="onayla">onfirm</string>
+    <string name="onayla">Confirm</string>
     <string name="iptal">Cancel</string>
     <string name="dil_secenegi">Language</string>
     <string name="para_gonder">Send Money</string>

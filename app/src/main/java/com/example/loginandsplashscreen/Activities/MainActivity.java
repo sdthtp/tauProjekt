@@ -256,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isInfoValid(String token) throws Exception{
         NetworkHandling h = new NetworkHandling();
         String k = h.execute("getInfo",token).get();
+        System.out.println(k);
         return k.charAt(0) == '{';
     }
 
