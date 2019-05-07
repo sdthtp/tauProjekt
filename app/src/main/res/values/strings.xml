@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginandSplashscreen</string>
+    <string name="app_name">Tau-Pay</string>
     <string name="prompt_email">E-mail</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -42,7 +42,7 @@
     <string name="togglebutton" translatable="false">ToggleButton</string>
     <string name="yemekhane">Canteen</string>
     <string name="shuttle">Shuttle</string>
-    <string name="ad_soyad">Name, Surename:</string>
+    <string name="ad_soyad">Name, Surname:</string>
     <string name="yemek_bakiyesi">Canteen Balance:</string>
     <string name="numarası">Number:</string>
     <string name="_160503131" translatable="false">160503131</string>

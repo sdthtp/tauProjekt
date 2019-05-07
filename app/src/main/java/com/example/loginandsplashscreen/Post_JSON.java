@@ -161,7 +161,7 @@ public class Post_JSON {
         return (String)Post_JSON(jsoned,"/customers/transfer","Authorization",token);
     }
 
-    //TODO:
+    //TODO: Backend must implement this
     public static String freeItem(String priceid, int amount, String token) {
         String jsoned = "{\"priceId\": \"" + priceid + "\",\"amount\": " + amount + " }";
         return (String)Post_JSON(jsoned,"/customers/donate-item","Authorization",token);
@@ -183,33 +183,12 @@ public class Post_JSON {
         }
     }
 
-    //TODO: not used anymore
-    /*public static String pay (String token) throws IOException, InterruptedException{
-        String qrcode = QRCodeHandler.decodeQRCode(Post_JSON.getQRCode(token));
-        String jsoned = "{\"qrCode\": \"" + qrcode + "\" }";
-        while (true) {
-            String k = (String)Post_JSON.Post_JSON(jsoned,"/customers/is-paid","Authorization",token);
-            System.out.println("Waiting for Payment to process!");
-            if (k.equals("true")) {
-                return "Payment complete! Respect+!";
-            } else {
-                Thread.sleep(1000);
-            }
-        }
-    }*/
 
 
 
     //request QR-Code String from Backend and generate the image
     public static String requestQRCode(String token) {
         String text = (String)readResponse("/customers/request-qr-code","Authorization",token);
-        /*Bitmap m = null;
-        try {
-            m = QRCodeHandler.generateQRCodeImage(text,200,200,"C:\\Users\\hatip\\Desktop\\qr.png");
-        } catch (Exception e) {
-            System.out.println("Error when creating QR Code: " + e);
-            return null;
-        }*/
         return text;
     }
 
