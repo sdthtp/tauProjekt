@@ -19,7 +19,7 @@
         android:backgroundTint="@color/black"
         android:foregroundTint="@color/black"
 
-        app:itemBackground="@color/tdu"
+        app:itemBackground="@color/darkgray"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
         app:menu="@menu/bottom_nav_menu" />

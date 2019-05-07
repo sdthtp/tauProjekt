@@ -4,11 +4,11 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="d">#FFEBEE</color>
     <color name="black">#000000</color>
-    <color name="darkgray">#4F4D4D</color>
+    <color name="darkgray">#FFFFFF</color>
     <color name="start">#E0727B</color>
     <color name="end">#990D1D</color>
     <color name="a">#2962FF</color>
     <color name="b">#D1EAEE</color>
-    <color name="c">#E3F7FA</color>
-    <color name="tdu">#0096B4</color>
+    <color name="c">#FFFFFF</color>
+    <color name="tdu">#FFFFFF</color>
 </resources>
