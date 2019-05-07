@@ -6,53 +6,153 @@
     android:layout_height="match_parent"
     tools:context=".Activities.FeedbackActivity">
 
-    <RatingBar
-        android:id="@+id/ratingBar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19999999"
-        android:stepSize="1"/>
-
-    <EditText
-        android:id="@+id/editText2"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
         android:ems="10"
-        android:gravity="top"
-        android:hint="Geben Sie ihr Kommentar ab"
+        android:hint="@string/yorumunuzu_buraya_yazabilirsiniz_opsiyonel"
         android:inputType="textMultiLine"
         android:lines="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.266">
+
+            <co.ceryle.segmentedbutton.SegmentedButtonGroup
+                android:id="@+id/sbg_feedback_type"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                app:sbg_backgroundColor="@android:color/white"
+                app:sbg_dividerColor="#0096b4"
+                app:sbg_dividerPadding="10dp"
+                app:sbg_dividerSize="1dp"
+                app:sbg_position="0"
+                app:sbg_radius="2dp"
+                app:sbg_ripple="true"
+                app:sbg_rippleColor="#0096b4"
+                app:sbg_selectorColor="#0096b4"
+                app:sbg_selectorTextColor="@android:color/white"
+                app:sbg_shadow="true"
+                app:sbg_shadowElevation="3dp"
+                app:sbg_shadowMargin="4dp">
+
+                <Button
+                    android:id="@+id/bu_feedback_mensa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="10dp"
+                    android:text="mensa"
+                    android:textAllCaps="true" />
+
+                <Button
+                    android:id="@+id/bu_feedback_shuttle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="10dp"
+                    android:text="shuttle"
+                    android:textAllCaps="true" />
+            </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+
+            <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                android:id="@+id/rb_feedback_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                app:srb_stepSize="1" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/tf_feedback_text"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#0096b4"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="Yorumunuzu buraya yazabilirsiniz"
+            android:inputType="textMultiLine"
+            tools:layout_editor_absoluteX="98dp"
+            tools:layout_editor_absoluteY="325dp" />
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/buttonFeedback2"
+        android:id="@+id/bu_feedback_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Senden"
+        android:layout_marginBottom="8dp"
+        android:onClick="showAlertDialog"
+        android:text="@string/g_nder"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="309dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Bu sayfada yemekhane/shuttle için puan verebilir ve yorum yapabilirsiniz."
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:gravity="top"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
 </android.support.constraint.ConstraintLayout>
-
-

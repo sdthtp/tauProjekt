@@ -20,13 +20,13 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="216dp"
+        android:layout_height="174dp"
         app:srcCompat="@drawable/tau_logo" />
 
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="325dp">
+        android:layout_height="304dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -39,10 +39,10 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/email"
+                    android:id="@+id/tf_login_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="ID"
+                    android:hint="@string/id"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -54,10 +54,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/tf_login_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Passwort"
+                    android:hint="@string/sifre"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -68,19 +68,19 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/email_sign_in_button"
+                android:id="@+id/bu_login_login"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Einloggen"
+                android:text="@string/giris_yap"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/bu_forgotpassword"
+                android:id="@+id/bu_login_forgotpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Passwort vergessen" />
+                android:text="@string/sifremi_unuttum" />
 
         </LinearLayout>
     </ScrollView>

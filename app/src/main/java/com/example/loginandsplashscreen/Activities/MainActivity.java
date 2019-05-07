@@ -1,5 +1,6 @@
 package com.example.loginandsplashscreen.Activities;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,7 +21,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.loginandsplashscreen.JsonedClasses.Customer;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
@@ -29,6 +35,7 @@ import com.google.gson.Gson;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout2;
     Customer o = null;
 
     @Override
@@ -48,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px); // sets the toggle button icon
         mDrawerLayout = findViewById(R.id.drawer);
+        //mDrawerLayout2 = findViewById(R.id.drawer2);
         NavigationView navigationView = findViewById(R.id.nav_menu);
-
         try {
             o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
         } catch (Exception e) {
@@ -61,6 +68,73 @@ public class MainActivity extends AppCompatActivity {
         final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
         final ParagonderFragment paragonderFragment =new ParagonderFragment();
         final OdemeFragment odemeFragment = new OdemeFragment();
+
+
+        setFragment(paragonderFragment);
+
+        /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
+        m1showDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                View mview=getLayoutInflater().inflate(R.layout.dialog_paragonder, null);
+                Button button =(Button) mview.findViewById(R.id.paragonder_evet);
+                Button button1=(Button) mview.findViewById(R.id.paragonder_hayir);
+                Button button2=(Button) mview.findViewById(R.id.paragonder_iptal);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Para gönderildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Para gönderilmedi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "İşlem iptal edildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+
+            }
+        });
+
+        Button m2showDialog=(Button) findViewById(R.id.bu_empfehlen_onayla);
+        m2showDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                View mview=getLayoutInflater().inflate(R.layout.dialog_empfehlen, null);
+                Button button =(Button) mview.findViewById(R.id.oner_evet);
+                Button button1=(Button) mview.findViewById(R.id.oner_hayir);
+                Button button2=(Button) mview.findViewById(R.id.oner_iptal);
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Kişi önerildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "Kişi önerilmedi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+                button2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(MainActivity.this, "İşlem iptal edildi.",Toast.LENGTH_SHORT ).show();
+                    }
+                });
+
+            }
+        });*/
 
         navigationView2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -93,15 +167,20 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setChecked(true);
                         int d = menuItem.getItemId();
                         switch (d) {
-                            case R.id.logout:
-                                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                            case R.id.ayarlar:
+                                Intent intent5 = new Intent(MainActivity.this, SettingsActivity.class);
                                 finish();
-                                startActivity(intent);
+                                startActivity(intent5);
                                 break;
+                            /*case R.id.yemeklistesi:
+                                final YemekListeFragment yemekListeFragment = new YemekListeFragment();
+                                setFragment(yemekListeFragment);
+                                Intent intent = new Intent(MainActivity.this,YemekListeActivity.class);
+                                break;*/
                             case R.id.feedback:
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
-                                finish();
                                 startActivity(intent2);
+                                finish();
                                 break;
                         }
 
@@ -131,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
                         TextView t = drawerView.findViewById(R.id.user_name);
                     try {
+                        //TODO: Tell backend to round off the numbers to two commas
                         t.setText(o.getName());
                         t = drawerView.findViewById(R.id.ogrenci_numarasi);
                         t.setText(o.getId());
@@ -196,6 +276,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /*@Override
+    /*public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+
+        MenuItem item = menu.findItem(R.id.action_settings);
+
+        if(item != null){
+            item.getActionView().setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    System.out.println("hallohallo");
+                }
+            });
+        }
+        return true;
+    }*/
+
     //Open drawer when the button is tapped
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -206,6 +303,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

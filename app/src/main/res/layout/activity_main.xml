@@ -47,10 +47,10 @@
     app:menu="@menu/drawermenu"
     android:layout_gravity="start"
     app:headerLayout="@layout/header"
-    android:fitsSystemWindows="false"
-    >
+    android:fitsSystemWindows="false">
 
 </android.support.design.widget.NavigationView>
+
 
 </android.support.v4.widget.DrawerLayout>
 
