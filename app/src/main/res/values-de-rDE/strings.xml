@@ -12,7 +12,7 @@
     <string name="permission_rationale">Für die Bereitstellung von E-Mail-Vervollständigungen sind Kontaktberechtigungen erforderlich.</string>
     <string name="hello_blank_fragment">Hallo leeres Fragment</string>
     <string name="yorumunuzu_buraya_yazabilirsiniz_opsiyonel">Geben Sie hier ihr Kommentar ab (optional)</string>
-    <string name="g_nder">Senden</string>
+    <string name="gonder">Senden</string>
     <string name="mensa">Mensa</string>
     <string name="degerlendirilecek_kisim">Zu bewertender Abschnitt</string>
     <string name="shuttle">Shuttle</string>
@@ -20,13 +20,13 @@
     <string name="sifre">Passwort</string>
     <string name="sifremi_unuttum">Passwort vergessen</string>
     <string name="giris_yap">Anmelden</string>
-    <string name="ifre_de_i_tir">Passwort ändern</string>
-    <string name="k_yap">Abmelden</string>
+    <string name="sifre_degistir">Passwort ändern</string>
+    <string name="cikis_yap">Abmelden</string>
     <string name="almanca">Deutsch</string>
     <string name="dil">Sprache:</string>
     <string name="turkce">Türkisch</string>
     <string name="evet">Ja</string>
-    <string name="hay_r">Nein</string>
+    <string name="hayir">Nein</string>
     <string name="ptal">Abbruch</string>
     <string name="ba_yapmaya_devam_etmek_istiyor_musunuz">Sind Sie sich sicher, dass Sie die angegebene Menge spenden wollen?</string>
     <string name="eski_ifre">Altes Passwort</string>
