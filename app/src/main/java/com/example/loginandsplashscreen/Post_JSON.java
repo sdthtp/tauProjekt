@@ -117,33 +117,11 @@ public class Post_JSON {
         }
     }
 
-    //TODO: not used anymore
-    /*public static String register(String id, String name, String mail, String password) {
-        Gson gson = new Gson();
-        Customer student = new Customer(id, name, mail, password);
-        String studentinformation = gson.toJson(student);
-        System.out.println(studentinformation);
-        return (String)Post_JSON(studentinformation,"/customers/sign-up","Content-Type","application/json; charset=UTF-8");
-    }*/
-
     //logs the user in and return the token;
     public static String login(String id, String password) {
         String login = "{ \"id\": \"" + id + "\", \"password\": \"" + password + "\" }";
         System.out.println(login);
         return (String)getToken(login);
-    }
-
-    //deposits the amount given in the parameters TODO: not used anymore
-    public static String deposit(int amount, String token) {
-        Amount a = new Amount(amount);
-        return (String)Post_JSON(new Gson().toJson(a),"/customers/deposit","Authorization",token);
-    }
-
-    //TODO: deprecated, not used anymore
-    public static String payOld(String priceId, String token) {
-        //String type = "{ \"priceId\":" + priceId + "}";
-        PriceId priceid1 = new PriceId(priceId);
-        return (String)Post_JSON(new Gson().toJson(priceid1),"/customers/pay","Authorization",token);
     }
 
     public static String forgotPassword(String id) {
