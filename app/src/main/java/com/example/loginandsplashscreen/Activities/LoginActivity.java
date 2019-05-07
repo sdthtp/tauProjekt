@@ -62,7 +62,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    new NetworkHandling().execute("forgotPassword",mIDView.getText().toString()).get();
+                    Intent intent = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
+                    startActivity(intent);
                 } catch (Exception e) {
                     System.out.println(e);
                 }

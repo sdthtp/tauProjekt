@@ -67,6 +67,7 @@
                 app:sbg_shadowMargin="4dp">
 
                 <Button
+                    android:background="@color/b"
                     android:id="@+id/bu_feedback_mensa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -110,30 +111,26 @@
 
     <Button
         android:id="@+id/bu_feedback_send"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@color/b"
         android:onClick="showAlertDialog"
         android:text="@string/gonder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintHorizontal_bias="0.97"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.072" />
 
     <TextView
         android:id="@+id/tv_description"
-        android:layout_width="309dp"
+        android:layout_width="0dp"
         android:layout_height="59dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Bu sayfada yemekhane/shuttle için puan verebilir ve yorum yapabilirsiniz."
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -146,7 +143,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000"
+        android:background="@color/tdu"
         android:gravity="top"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"

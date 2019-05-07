@@ -1,17 +1,13 @@
 package com.example.loginandsplashscreen.Activities;
-
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,11 +17,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.loginandsplashscreen.JsonedClasses.Customer;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
@@ -35,7 +27,6 @@ import com.google.gson.Gson;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private DrawerLayout mDrawerLayout2;
     Customer o = null;
 
     @Override
@@ -55,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px); // sets the toggle button icon
         mDrawerLayout = findViewById(R.id.drawer);
-        //mDrawerLayout2 = findViewById(R.id.drawer2);
         NavigationView navigationView = findViewById(R.id.nav_menu);
         try {
             o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
@@ -70,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         final OdemeFragment odemeFragment = new OdemeFragment();
 
 
-        setFragment(paragonderFragment);
+        setFragment(paragonderFragment,"PARAGONDER_FRAGMENT");
 
         /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
         m1showDialog.setOnClickListener(new View.OnClickListener() {
@@ -141,16 +131,16 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id=menuItem.getItemId();
                 if(id==R.id.bagis){
-                    setFragment(bagisFragment);
+                    setFragment(bagisFragment,"BAGIS_FRAGMENT");
                     return true;
                 }else if(id==R.id.oner){
-                    setFragment(empfehlenFragment);
+                    setFragment(empfehlenFragment,"EMPFEHLEN_FRAGMENT");
                     return true;
                 }else if(id == R.id.paragonder){
-                    setFragment(paragonderFragment);
+                    setFragment(paragonderFragment,"PARAGONDER_FRAGMENT");
                     return true;
                 } else if (id == R.id.odeme) {
-                    setFragment(odemeFragment);
+                    setFragment(odemeFragment,"ODEME_FRAGMENT");
                     return true;
                 } else {
                     return false;
@@ -266,12 +256,13 @@ public class MainActivity extends AppCompatActivity {
     private boolean isInfoValid(String token) throws Exception{
         NetworkHandling h = new NetworkHandling();
         String k = h.execute("getInfo",token).get();
+        System.out.println(k);
         return k.charAt(0) == '{';
     }
 
-    private void setFragment(Fragment fragment){
+    private void setFragment(Fragment fragment, String tag){
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.replace(R.id.frame,fragment,tag);
         fragmentTransaction.commit();
     }
 

@@ -5,22 +5,22 @@
         android:id="@+id/paragonder"
         android:icon="@drawable/ic_card_giftcard_black_24dp"
         android:iconTint="#000"
-        android:title="@string/para_gonder"
+        android:title="Para Gonder"
         />
     <item
         android:id="@+id/odeme"
         android:icon="@drawable/ic_euro_symbol"
-        android:title="@string/odeme" />
+        android:title="Ödeme" />
     <item
         android:iconTint="@color/black"
         android:id="@+id/bagis"
         android:icon="@drawable/ic_supervisor_account_black_24dp"
-        android:title="@string/bagis" />
+        android:title="Bagis" />
     <item
         android:iconTint="@color/black"
         android:id="@+id/oner"
         android:icon="@drawable/ic_local_offer_black_24dp"
-        android:title="@string/oner" />
+        android:title="Oner" />
 
 
 </menu>

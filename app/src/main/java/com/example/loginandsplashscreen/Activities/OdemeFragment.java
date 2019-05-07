@@ -22,12 +22,9 @@ import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.Handlers.QRCodeEncoder;
 import com.example.loginandsplashscreen.JsonedClasses.Customer;
 import com.example.loginandsplashscreen.R;
-import com.google.gson.Gson;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.encoder.QRCode;
-
 
 public class OdemeFragment extends Fragment implements View.OnClickListener {
 
@@ -35,17 +32,19 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     CountDownTimer mCountDownTimer;
     int i=0;
     String response;
+    boolean processingPayment = false; //Determines whether there is a payment running (to prevent overload)
 
 
 
     public OdemeFragment() {
-        // Required empty public constructor
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View myView = inflater.inflate(R.layout.fragment_odeme, container, false);
         ((Button) myView.findViewById(R.id.bezahlenBtn)).setOnClickListener(this);
+        ProgressBar progressBar = myView.findViewById(R.id.pb_odeme);
+        progressBar.setProgress(0);
 
         Customer cst = null;
         Button bezahlen;
@@ -61,31 +60,45 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
         mProgressBar=v.findViewById(R.id.pb_odeme);
         mProgressBar.setProgress(i);
         mCountDownTimer=new CountDownTimer(30000,1000) {
-
+        Fragment myFragment = getFragmentManager().findFragmentByTag("ODEME_FRAGMENT");
             @Override
             public void onTick(long millisUntilFinished) {
-                i++;
-                mProgressBar.setProgress(i*100/(30000/1000));
-                try {
-                    String check;
-                    check = new NetworkHandling().execute("isPaid",response,LoginActivity.token).get();
-                    System.out.println(check);
-                    if (check.equals("true")) {
-                        mCountDownTimer.cancel();
-                        mProgressBar.setProgress(100);
-                        i=0;
-                    }
-                } catch (Exception e) {
-                    System.out.println("Error while trying to check whether Payment was complete! " + e);
-                }
-
+               if (myFragment != null && myFragment.isVisible()) {
+                   i++;
+                   mProgressBar.setProgress(i * 100 / (30000 / 1000));
+                   try {
+                       String check;
+                       check = new NetworkHandling().execute("isPaid", response, LoginActivity.token).get();
+                       System.out.println(check);
+                       if (check.equals("true")) {
+                           mProgressBar.setProgress(0);
+                           mCountDownTimer.cancel();
+                           //TODO: Make this and all other Toasts multilingual
+                           Toast.makeText(getView().getContext(), "Payment successful!", Toast.LENGTH_SHORT).show();
+                           ImageView img = getView().getRootView().findViewById(R.id.imageView2);
+                           processingPayment = false;
+                           img.setVisibility(getView().INVISIBLE);
+                           i = 0;
+                       }
+                   } catch (Exception e) {
+                       processingPayment = false;
+                       System.out.println("Error while trying to check whether Payment was complete! " + e);
+                   }
+               } else {
+                   mProgressBar.setProgress(0);
+                   mCountDownTimer.cancel();
+                   i = 0;
+                   processingPayment = false;
+               }
             }
 
             @Override
             public void onFinish() {
-                System.out.println("Payment could not be processed!");
-                i++;
-                mProgressBar.setProgress(100);
+                Toast.makeText(getView().getContext(), "Payment not made in time!",Toast.LENGTH_SHORT ).show();
+                mProgressBar.setProgress(0);
+                processingPayment = false;
+                ImageView img = getView().getRootView().findViewById(R.id.imageView2);
+                img.setVisibility(getView().INVISIBLE);
                 i=0;
             }
         };
@@ -93,25 +106,24 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onClick(View v) {
-        try {
-            response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
-            startTimer(getView());
-            ImageView img =  v.getRootView().findViewById(R.id.imageView2);
-            MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-            BitMatrix bitMatrix = multiFormatWriter.encode(response, BarcodeFormat.QR_CODE,300,300);
-            QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
-            Bitmap bitmpap = qrCodeEncoder.createBitmap(bitMatrix);
-            img.setImageBitmap(bitmpap);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        /*QRCodeFragment qrCodeFragment = new QRCodeFragment();
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentContainer, qrCodeFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();*/
+            if (!processingPayment) {
+                try {
+                    processingPayment = true;
+                    response = new NetworkHandling().execute("requestQRCode", LoginActivity.token).get();
+                    startTimer(getView());
+                    ImageView img =  v.getRootView().findViewById(R.id.imageView2);
+                    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+                    BitMatrix bitMatrix = multiFormatWriter.encode(response, BarcodeFormat.QR_CODE,300,300);
+                    QRCodeEncoder qrCodeEncoder = new QRCodeEncoder();
+                    Bitmap bitmpap = qrCodeEncoder.createBitmap(bitMatrix);
+                    img.setImageBitmap(bitmpap);
+                    img.setVisibility(v.VISIBLE);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            } else {
+                Toast.makeText(getView().getContext(), "Please wait until this Payment is either processed or times out!",Toast.LENGTH_SHORT ).show();
+            }
 
     }
 }
