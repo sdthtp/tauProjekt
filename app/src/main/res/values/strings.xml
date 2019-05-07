@@ -45,10 +45,11 @@
     <string name="ad_soyad">Name, Surname:</string>
     <string name="yemek_bakiyesi">Canteen Balance:</string>
     <string name="numaras">Number:</string>
-    <string name="_160503131" translatable="false">160503131</string>
+    <string name="xxxxxxxxx" translatable="false">xxxxxxxxx</string>
     <string name="shuttle_bakiyesi">Shuttle Balance:</string>
     <string name="onayla">Affirm</string>
     <string name="ptal">Cancel</string>
-    <string name="xx_xx_tl">xx_xx_tl</string>
-    <string name="xxx_xx_tl">xxx_xx_tl</string>
+    <string name="xx_xx_tl">XX.XX TL</string>
+    <string name="xxx_xx_tl">XX.XX TL</string>
+    <string name="forgotpassword">Here you can reset your password. Enter your Identification Number here. The instructions to reset your password will be sent to your E-Mail</string>
 </resources>

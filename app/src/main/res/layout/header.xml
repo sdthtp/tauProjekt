@@ -82,7 +82,7 @@
                 android:id="@+id/ogrenci_numarasi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_160503131"
+                android:text="@string/xxxxxxxxx"
                 android:textColor="#6c6c6c"
                 android:textStyle="bold" />
 

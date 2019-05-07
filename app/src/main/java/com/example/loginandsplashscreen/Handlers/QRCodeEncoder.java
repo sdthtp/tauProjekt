@@ -10,14 +10,6 @@ import com.google.zxing.common.BitMatrix;
 
 import java.util.Map;
 
-/**
- * Helper class for encoding barcodes as a Bitmap.
- *
- * Adapted from QRCodeEncoder, from the zxing project:
- * https://github.com/zxing/zxing
- *
- * Licensed under the Apache License, Version 2.0.
- */
 public class QRCodeEncoder {
     private static final int WHITE = 0xFFFFFFFF;
     private static final int BLACK = 0xFF000000;
@@ -61,13 +53,5 @@ public class QRCodeEncoder {
         } catch (Exception e) {
             throw new WriterException(e);
         }
-    }
-
-    public Bitmap encodeBitmap(String contents, BarcodeFormat format, int width, int height) throws WriterException {
-        return createBitmap(encode(contents, format, width, height));
-    }
-
-    public Bitmap encodeBitmap(String contents, BarcodeFormat format, int width, int height, Map<EncodeHintType, ?> hints) throws WriterException {
-        return createBitmap(encode(contents, format, width, height, hints));
     }
 }

@@ -47,6 +47,7 @@
     <string name="yeni_ifre">Yeni Şifre</string>
     <string name="yeni_ifre_onayla">Yeni Şifre Onayla</string>
     <string name="yorumunuzu_buraya_yazabilirsiniz_opsiyonel">Yorumunuzu buraya yazabilirsiniz (opsiyonel)</string>
-    <string name="xx_xx_tl">xx_xx_tl</string>
-    <string name="xxx_xx_tl">xxx_xx_tl</string>
+    <string name="xx_xx_tl">XX.XX TL</string>
+    <string name="xxx_xx_tl">XX.XX TL</string>
+    <string name="forgotpassword">Buradan şifrenizi sıfırlayabilirsiniz. Okul kimlik numaranızı girin. Şifreyi değiştirmeye yönelik mail gönderilecektir</string>
 </resources>

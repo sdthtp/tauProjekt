@@ -47,6 +47,7 @@
     <string name="yemek_bakiyesi">Mensa-Guthaben</string>
     <string name="numaras">Nummer:</string>
     <string name="shuttle_bakiyesi">Shuttle-Guthaben</string>
-    <string name="xx_xx_tl">xx_xx_tl</string>
-    <string name="xxx_xx_tl">xxx_xx_tl</string>
+    <string name="xx_xx_tl">XX.XX TL</string>
+    <string name="xxx_xx_tl">XX.XX TL</string>
+    <string name="forgotpassword">Hier können Sie ihr Kennwort zurücksetzen. Fügen Sie hier ihre Identifikationsnummer ein. Anweisungen zum Zurücksetzen ihres Kennworts wird Ihnen per Mail gesendet.</string>
 </resources>
