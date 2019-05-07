@@ -23,7 +23,7 @@
         android:lineSpacingExtra="8sp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="@string/dikkat_buradan_t_rk_alman_niversitesinden_rastgele_se_ilen_bir_ihtiya_sahibi_renciye_ba_yapabilirsiniz_her_yemek_n_i_in_ba_miktar_4_00_tl_her_shuttle_seyahati_i_in_ise_2_20_tl_dir"
+        android:text="@string/dikkat_buradan_turk_alman_universitesinden_rastgele_secilen_bir_ihtiyac_sahibi_ogrenciye_bagis_yapabilirsiniz_her_yemek_n_i_in_ba_miktar_4_00_tl_her_shuttle_seyahati_i_in_ise_2_20_tl_dir"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="italic"

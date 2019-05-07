@@ -14,7 +14,7 @@
     <string name="yorumunuzu_buraya_yazabilirsiniz_opsiyonel">Geben Sie hier ihr Kommentar ab (optional)</string>
     <string name="g_nder">Senden</string>
     <string name="mensa">Mensa</string>
-    <string name="de_erlendirilecek_k_s_m">Zu bewertender Abschnitt</string>
+    <string name="degerlendirilecek_kisim">Zu bewertender Abschnitt</string>
     <string name="shuttle">Shuttle</string>
     <string name="id">ID</string>
     <string name="sifre">Passwort</string>
@@ -24,7 +24,7 @@
     <string name="k_yap">Abmelden</string>
     <string name="almanca">Deutsch</string>
     <string name="dil">Sprache:</string>
-    <string name="t_rk_e">Türkisch</string>
+    <string name="turkce">Türkisch</string>
     <string name="evet">Ja</string>
     <string name="hay_r">Nein</string>
     <string name="ptal">Abbruch</string>
@@ -45,9 +45,16 @@
     <string name="miktar">Betrag</string>
     <string name="ad_soyad">Name, Nachname:</string>
     <string name="yemek_bakiyesi">Mensa-Guthaben</string>
-    <string name="numaras">Nummer:</string>
+    <string name="numarası">Nummer:</string>
     <string name="shuttle_bakiyesi">Shuttle-Guthaben</string>
     <string name="xx_xx_tl">XX.XX TL</string>
     <string name="xxx_xx_tl">XX.XX TL</string>
     <string name="forgotpassword">Hier können Sie ihr Kennwort zurücksetzen. Fügen Sie hier ihre Identifikationsnummer ein. Anweisungen zum Zurücksetzen ihres Kennworts wird Ihnen per Mail gesendet.</string>
+    <string name="xx_xx_tl">xx_xx_tl</string>
+    <string name="xxx_xx_tl">xxx_xx_tl</string>
+    <string name="dil_secenegi">Sprachauswahl</string>
+    <string name="para_gonder">Geldtransfer</string>
+    <string name="odeme">Bezahlen</string>
+    <string name="bagis">Spende</string>
+    <string name="oner">Recommend</string>
 </resources>
