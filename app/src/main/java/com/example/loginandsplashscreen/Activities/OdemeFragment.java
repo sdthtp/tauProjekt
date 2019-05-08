@@ -70,7 +70,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                        String check;
                        check = new NetworkHandling().execute("isPaid", response, LoginActivity.token).get();
                        System.out.println(check);
-                       if (check.equals("true")) {
+                       if (check.equals("paid successfully")) {
                            mProgressBar.setProgress(0);
                            mCountDownTimer.cancel();
                            //TODO: Make this and all other Toasts multilingual

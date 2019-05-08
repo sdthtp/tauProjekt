@@ -24,6 +24,8 @@ import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
 import com.google.gson.Gson;
 
+//TODO: IMPLEMENT REFRESH DATA WHEN ANY TRANSACTION IS DONE!!! VERY URGENT!!!
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;

@@ -153,12 +153,7 @@ public class Post_JSON {
 
     public static String isPaid(String qrcode, String token) {
         String jsoned = "{\"qrCode\": \"" + qrcode + "\" }";
-        String k = (String)Post_JSON.Post_JSON(jsoned,"/customers/is-paid","Authorization",token);
-        if (k.equals("true")) {
-            return "true";
-        } else {
-            return "false";
-        }
+        return (String)Post_JSON.Post_JSON(jsoned,"/customers/is-paid","Authorization",token);
     }
 
 
