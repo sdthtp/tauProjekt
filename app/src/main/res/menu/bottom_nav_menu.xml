@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/paragonder"
-        android:icon="@drawable/ic_card_giftcard_black_24dp"
-        android:title="@string/para_gonder" />
-    <item
         android:id="@+id/odeme"
         android:icon="@drawable/ic_euro_symbol"
         android:title="@string/odeme" />
+    <item
+        android:id="@+id/paragonder"
+        android:icon="@drawable/ic_card_giftcard_black_24dp"
+        android:title="@string/para_gonder" />
     <item
         android:id="@+id/bagis"
         android:icon="@drawable/ic_supervisor_account_black_24dp"
