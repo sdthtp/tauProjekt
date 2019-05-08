@@ -63,11 +63,16 @@
     <string name="bagisiniz_kabul_edilmistir">Ihre Spende wurde akzeptiert</string>
     <string name="kisi_onerilmistir">Der Student wurde empfohlen</string>
     <string name="kisi_onerilmedi">Der Student wurde nicht empfohlen</string>
-    <string name="degerlendirmeyi_gondermek_istiyor_musunuz">Möchten Sie dieses Feedback senden?</string>
+    <string name="degerlendirmeyi_göndermek_istiyor_musunuz">Möchten Sie dieses Feedback senden?</string>
     <string name="degerlendirme_gonderilmedi">Das Feedback wurde nicht gesendet</string>
     <string name="degerlendirme_gonderildi">Das Feedback wurde gesendet</string>
     <string name="ogrenci_numarasi_veya_sifre_yanlis">Die ID oder das Kennwort ist falsch!</string>
     <string name="odeme_zamaninda_yapilmadi">Die Zahlung wurde nicht rechtzeitig gemacht! Bitte versuchen Sie es erneut</string>
     <string name="para_gonderildi">Die Transaktion war erfolgreich</string>
     <string name="sifreuyusmuyor">Kennwörter stimmen nicht überein!</string>
+    <string name="ogrenci_numaranizi_girin">.</string>
+    <string name="odeme_basarili">.</string>
+    <string name="lutfen_yeni_qr_code_istemeyin">.</string>
+    <string name="para_gonderilmedi">.</string>
+    <string name="sifredegistirildi">.</string>
 </resources>

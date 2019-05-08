@@ -65,11 +65,16 @@
     <string name="bagisiniz_kabul_edilmistir">Your donation was accepted!</string>
     <string name="kisi_onerilmistir">The student was recommended</string>
     <string name="kisi_onerilmedi">The student was NOT recommended</string>
-    <string name="degerlendirmeyi_gondermek_istiyor_musunuz">Do you want to send this feedback?</string>
+    <string name="degerlendirmeyi_göndermek_istiyor_musunuz">Do you want to send this feedback?</string>
     <string name="degerlendirme_gonderilmedi">The feedback was not sent</string>
     <string name="degerlendirme_gonderildi">The feedback was sent</string>
     <string name="ogrenci_numarasi_veya_sifre_yanlis">ID or Password is wrong!</string>
     <string name="odeme_zamaninda_yapilmadi">Payment was not made in time! Please retry</string>
     <string name="para_gonderildi">The transaction was successful</string>
     <string name="sifreuyusmuyor">Passwords do not match</string>
+    <string name="ogrenci_numaranizi_girin">Insert your ID</string>
+    <string name="odeme_basarili">Payment successful</string>
+    <string name="lutfen_yeni_qr_code_istemeyin">Please do not request a new QR-Code without having the current one processed/canceled</string>
+    <string name="para_gonderilmedi">Transfer was aborted</string>
+    <string name="sifredegistirildi">Password was changed</string>
 </resources>

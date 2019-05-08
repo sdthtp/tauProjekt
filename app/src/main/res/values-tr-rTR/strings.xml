@@ -63,11 +63,16 @@
     <string name="bagisiniz_kabul_edilmistir">Bağışınız kabul edilmiştir!</string>
     <string name="kisi_onerilmistir">Kişi önerilmiştir</string>
     <string name="kisi_onerilmedi">.</string>
-    <string name="degerlendirmeyi_gondermek_istiyor_musunuz">.</string>
+    <string name="degerlendirmeyi_göndermek_istiyor_musunuz">.</string>
     <string name="degerlendirme_gonderilmedi">.</string>
     <string name="degerlendirme_gonderildi">.</string>
     <string name="ogrenci_numarasi_veya_sifre_yanlis">.</string>
     <string name="odeme_zamaninda_yapilmadi">.</string>
     <string name="para_gonderildi">.</string>
     <string name="sifreuyusmuyor">.</string>
+    <string name="ogrenci_numaranizi_girin">.</string>
+    <string name="odeme_basarili">.</string>
+    <string name="lutfen_yeni_qr_code_istemeyin">.</string>
+    <string name="para_gonderilmedi">.</string>
+    <string name="sifredegistirildi">.</string>
 </resources>
