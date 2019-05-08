@@ -57,4 +57,19 @@
     <string name="odeme">Payment</string>
     <string name="bagis">Donation</string>
     <string name="oner">Suggest</string>
+    <string name="feedback">Feedback</string>
+    <string name="ayarlar">Settings</string>
+    <string name="ingilizce">English</string>
+    <string name="yemekhane_yorum">Here you can leave a comment and a rating for today\'s meal in the canteen or the shuttle</string>
+    <string name="feedback_yorumkismi">Write your comment here...</string>
+    <string name="bagisiniz_kabul_edilmistir">Your donation was accepted!</string>
+    <string name="kisi_onerilmistir">The student was recommended</string>
+    <string name="kisi_onerilmedi">The student was NOT recommended</string>
+    <string name="degerlendirmeyi_gondermek_istiyor_musunuz">Do you want to send this feedback?</string>
+    <string name="degerlendirme_gonderilmedi">The feedback was not sent</string>
+    <string name="degerlendirme_gonderildi">The feedback was sent</string>
+    <string name="ogrenci_numarasi_veya_sifre_yanlis">ID or Password is wrong!</string>
+    <string name="odeme_zamaninda_yapilmadi">Payment was not made in time! Please retry</string>
+    <string name="para_gonderildi">The transaction was successful</string>
+    <string name="sifreuyusmuyor">Passwords do not match</string>
 </resources>

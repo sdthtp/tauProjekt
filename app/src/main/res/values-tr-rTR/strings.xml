@@ -55,4 +55,19 @@
     <string name="odeme">Ödeme</string>
     <string name="bagis">Askı</string>
     <string name="oner">Öner</string>
+    <string name="feedback">Feedback</string>
+    <string name="ayarlar">Ayarlar</string>
+    <string name="ingilizce">İngilizce</string>
+    <string name="yemekhane_yorum">Bu sayfada bugünki Yemekhane Yemeği veya shuttle için puan verebilir ve yorum yapabilirsiniz.</string>
+    <string name="feedback_yorumkismi">Yorumunuzu buraya yazınız...</string>
+    <string name="bagisiniz_kabul_edilmistir">Bağışınız kabul edilmiştir!</string>
+    <string name="kisi_onerilmistir">Kişi önerilmiştir</string>
+    <string name="kisi_onerilmedi">.</string>
+    <string name="degerlendirmeyi_gondermek_istiyor_musunuz">.</string>
+    <string name="degerlendirme_gonderilmedi">.</string>
+    <string name="degerlendirme_gonderildi">.</string>
+    <string name="ogrenci_numarasi_veya_sifre_yanlis">.</string>
+    <string name="odeme_zamaninda_yapilmadi">.</string>
+    <string name="para_gonderildi">.</string>
+    <string name="sifreuyusmuyor">.</string>
 </resources>

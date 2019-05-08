@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         checkConnectivity();
+
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         final OdemeFragment odemeFragment = new OdemeFragment();
 
 
-        setFragment(paragonderFragment,"PARAGONDER_FRAGMENT");
+        setFragment(odemeFragment,"ODEME_FRAGMENT");
 
         /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
         m1showDialog.setOnClickListener(new View.OnClickListener() {
@@ -100,30 +101,6 @@ public class MainActivity extends AppCompatActivity {
         m2showDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-                View mview=getLayoutInflater().inflate(R.layout.dialog_empfehlen, null);
-                Button button =(Button) mview.findViewById(R.id.oner_evet);
-                Button button1=(Button) mview.findViewById(R.id.oner_hayir);
-                Button button2=(Button) mview.findViewById(R.id.oner_iptal);
-
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Kişi önerildi.",Toast.LENGTH_SHORT ).show();
-                    }
-                });
-                button1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "Kişi önerilmedi.",Toast.LENGTH_SHORT ).show();
-                    }
-                });
-                button2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(MainActivity.this, "İşlem iptal edildi.",Toast.LENGTH_SHORT ).show();
-                    }
-                });
 
             }
         });*/
@@ -171,8 +148,9 @@ public class MainActivity extends AppCompatActivity {
                                 break;*/
                             case R.id.feedback:
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
-                                startActivity(intent2);
                                 finish();
+                                startActivity(intent2);
+
                                 break;
                         }
 

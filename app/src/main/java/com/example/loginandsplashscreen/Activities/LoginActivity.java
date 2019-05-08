@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
         if (TextUtils.isEmpty(id)) {
-            mIDView.setError("Ögrenci numaranizi girin!");
+            mIDView.setError(getString(R.string.ogrenci_numaranizi_girin));
             focusView = mIDView;
             cancel = true;
         }
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         System.out.println(token);
         // Check for a valid id address.
         if (isInfoValid(token)) {
-            mIDView.setError("Ögrenci numarasi veya sifre yanlis!");
+            mIDView.setError(getString(R.string.ogrenci_numarasi_veya_sifre_yanlis));
             focusView = mIDView;
             cancel = true;
         }

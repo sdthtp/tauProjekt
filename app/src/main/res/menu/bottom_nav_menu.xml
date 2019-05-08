@@ -4,23 +4,19 @@
     <item
         android:id="@+id/paragonder"
         android:icon="@drawable/ic_card_giftcard_black_24dp"
-        android:iconTint="#000"
-        android:title="Para Gonder"
-        />
+        android:title="@string/para_gonder" />
     <item
         android:id="@+id/odeme"
         android:icon="@drawable/ic_euro_symbol"
-        android:title="Ödeme" />
+        android:title="@string/odeme" />
     <item
-        android:iconTint="@color/black"
         android:id="@+id/bagis"
         android:icon="@drawable/ic_supervisor_account_black_24dp"
-        android:title="Bagis" />
+        android:title="@string/bagis" />
     <item
-        android:iconTint="@color/black"
         android:id="@+id/oner"
         android:icon="@drawable/ic_local_offer_black_24dp"
-        android:title="Oner" />
+        android:title="@string/oner" />
 
 
 </menu>

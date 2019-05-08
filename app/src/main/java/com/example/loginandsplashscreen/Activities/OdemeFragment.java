@@ -74,7 +74,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                            mProgressBar.setProgress(0);
                            mCountDownTimer.cancel();
                            //TODO: Make this and all other Toasts multilingual
-                           Toast.makeText(getView().getContext(), "Payment successful!", Toast.LENGTH_SHORT).show();
+                           Toast.makeText(getView().getContext(),getString(R.string.odeme_basarili), Toast.LENGTH_SHORT).show();
                            ImageView img = getView().getRootView().findViewById(R.id.imageView2);
                            processingPayment = false;
                            img.setVisibility(getView().INVISIBLE);
@@ -94,7 +94,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFinish() {
-                Toast.makeText(getView().getContext(), "Payment not made in time!",Toast.LENGTH_SHORT ).show();
+                Toast.makeText(getView().getContext(),getString(R.string.odeme_zamaninda_yapilmadi),Toast.LENGTH_SHORT ).show();
                 mProgressBar.setProgress(0);
                 processingPayment = false;
                 ImageView img = getView().getRootView().findViewById(R.id.imageView2);
@@ -122,7 +122,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                     System.out.println(e);
                 }
             } else {
-                Toast.makeText(getView().getContext(), "Please wait until this Payment is either processed or times out!",Toast.LENGTH_SHORT ).show();
+                Toast.makeText(getView().getContext(),getString(R.string.lutfen_yeni_qr_code_istemeyin),Toast.LENGTH_SHORT ).show();
             }
 
     }

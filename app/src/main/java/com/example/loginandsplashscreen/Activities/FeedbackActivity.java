@@ -92,17 +92,17 @@ public class FeedbackActivity extends AppCompatActivity {
 
     public void showAlertDialog(View v){
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setTitle("Feedback");
-            alert.setMessage("Değerlendirmeyi göndermek istiyormusunuz?");
+            alert.setTitle(getString(R.string.feedback));
+            alert.setMessage(getString(R.string.degerlendirmeyi_göndermek_istiyor_musunuz));
 
-            alert.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
+            alert.setNegativeButton(getString(R.string.hayir), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(FeedbackActivity.this, "Değerlendirme gönderilmedi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedbackActivity.this,getString(R.string.degerlendirme_gonderilmedi), Toast.LENGTH_SHORT).show();
                 }
             });
 
-            alert.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+            alert.setPositiveButton(R.string.evet, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
@@ -121,7 +121,7 @@ public class FeedbackActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         System.out.println(e);
                     }
-                    Toast.makeText(FeedbackActivity.this, "Değerlendirme gönderildi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FeedbackActivity.this,getString(R.string.degerlendirme_gonderildi), Toast.LENGTH_SHORT).show();
                 }
             });
             alert.create().show();

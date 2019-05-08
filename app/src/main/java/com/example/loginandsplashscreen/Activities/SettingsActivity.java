@@ -84,13 +84,13 @@ public class SettingsActivity extends AppCompatActivity {
                 // Inflate and set the layout for the dialog
                 // Pass null as the parent view because its going in the dialog layout
 
-                builder.setNegativeButton("İptal Et", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(getString(R.string.iptal), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
 
-                builder.setPositiveButton("Değiştir", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(getString(R.string.sifre_degistir), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         EditText altespasswort = ((AlertDialog) dialog).findViewById(R.id.tf_changepassword_old);
@@ -99,17 +99,17 @@ public class SettingsActivity extends AppCompatActivity {
                         String alt = altespasswort.getText().toString();
                         String neu = neuespasswort.getText().toString();
                         String neuconfirm = neuespasswortconfirm.getText().toString();
-
+                        //TODO: implement check, whether the old password is correct
                         NetworkHandling h = new NetworkHandling();
 
                         try {
                             if(!neu.equals(neuconfirm)){
-                                Toast.makeText(SettingsActivity.this, "Şifre uyuşmuyor", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingsActivity.this,getString(R.string.sifreuyusmuyor), Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 String f = new NetworkHandling().execute("changePassword",alt,neu,LoginActivity.token).get();
                                 System.out.println(f);
-                                Toast.makeText(SettingsActivity.this, "Şifre değiştirildi", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingsActivity.this,getString(R.string.sifredegistirildi), Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
                             System.out.println(e);
@@ -125,9 +125,9 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void showChangeLanguageDialog(){
-        final String[] listItems = {"Türkce", "Almanca"};
+        final String[] listItems = {getString(R.string.turkce), getString(R.string.almanca), getString(R.string.ingilizce)};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
-        mBuilder.setTitle("Choose Language");
+        mBuilder.setTitle(getString(R.string.dil_secenegi));
         mBuilder.setSingleChoiceItems(listItems,-1, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -137,6 +137,9 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                 else if(i == 1){
                     setLocale("de");
+                    recreate();
+                } else if (i == 2) {
+                    setLocale("default");
                     recreate();
                 }
                 dialogInterface.dismiss();
@@ -161,7 +164,6 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String language = prefs.getString("My_Lang", "");
         setLocale(language);
-
     }
 
 

@@ -67,12 +67,12 @@
                 app:sbg_shadowMargin="4dp">
 
                 <Button
-                    android:background="@color/b"
                     android:id="@+id/bu_feedback_mensa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/b"
                     android:minHeight="10dp"
-                    android:text="mensa"
+                    android:text="@string/mensa"
                     android:textAllCaps="true" />
 
                 <Button
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minHeight="10dp"
-                    android:text="shuttle"
+                    android:text="@string/shuttle"
                     android:textAllCaps="true" />
             </co.ceryle.segmentedbutton.SegmentedButtonGroup>
 
@@ -102,7 +102,7 @@
             android:backgroundTint="#0096b4"
             android:ems="10"
             android:gravity="top"
-            android:hint="Yorumunuzu buraya yazabilirsiniz"
+            android:hint="@string/feedback_yorumkismi"
             android:inputType="textMultiLine"
             tools:layout_editor_absoluteX="98dp"
             tools:layout_editor_absoluteY="325dp" />
@@ -133,7 +133,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Bu sayfada yemekhane/shuttle için puan verebilir ve yorum yapabilirsiniz."
+        android:text="@string/yemekhane_yorum"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

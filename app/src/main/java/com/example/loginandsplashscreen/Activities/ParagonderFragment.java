@@ -21,7 +21,8 @@ import co.ceryle.segmentedbutton.SegmentedButtonGroup;
 public class ParagonderFragment extends Fragment implements OnClickListener {
 
     Button gonder;
-
+    String id;
+    String amount;
 
     public ParagonderFragment() {
         // Required empty public constructor
@@ -44,11 +45,6 @@ public class ParagonderFragment extends Fragment implements OnClickListener {
 
     public void onClick(View v) {
 
-
-
-
-
-
         TextView t = getView().findViewById(R.id.tf_paragonder_id);
         final String[] type = new String[1];
         SegmentedButtonGroup sbg = getView().findViewById(R.id.sbg_sendmoney_type);
@@ -66,18 +62,35 @@ public class ParagonderFragment extends Fragment implements OnClickListener {
             }
         });
 
-        String id = t.getText() + "";
+        id = t.getText() + "";
         t = getView().findViewById(R.id.tf_paragonder_amount);
-        String amount = t.getText() + "";
-
-        try {
-            String response = new NetworkHandling().execute("transfer",id,type[0],amount,LoginActivity.token).get();
-            //TODO: Implement correct response to wrong input (e.g. if user does not exist or balance is insufficient)
-            System.out.println("TRANSFER DONE: RESPONSE: " + response);
-        } catch (Exception e) {
-            System.out.println("EXCEPTION WHILE MONEY TRANSFER: " + e);
-        }
-        Toast.makeText(getView().getContext(), "Para gönderildi.",Toast.LENGTH_SHORT ).show();
+        amount = t.getText() + "";
+        View mview=getLayoutInflater().inflate(R.layout.dialog_paragonder, null);
+        Button button =(Button) mview.findViewById(R.id.paragonder_evet);
+        Button button1=(Button) mview.findViewById(R.id.paragonder_hayir);
+        AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(getContext());
+        alertdialogbuilder.setView(mview);
+        AlertDialog alertDialog = alertdialogbuilder.create();
+        alertDialog.show();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String response = new NetworkHandling().execute("transfer",id,type[0],amount,LoginActivity.token).get();
+                    //TODO: Implement correct response to wrong input (e.g. if user does not exist or balance is insufficient)
+                    System.out.println("TRANSFER DONE: RESPONSE: " + response);
+                } catch (Exception e) {
+                    System.out.println("EXCEPTION WHILE MONEY TRANSFER: " + e);
+                }
+                Toast.makeText(getContext(),getString(R.string.para_gonderildi),Toast.LENGTH_SHORT ).show();
+            }
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),getString(R.string.para_gonderilmedi),Toast.LENGTH_SHORT ).show();
+            }
+        });
     }
 
 
