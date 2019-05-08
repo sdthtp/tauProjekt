@@ -24,15 +24,15 @@
 
     <Button
         android:id="@+id/bezahlenBtn"
-        android:layout_width="0dp"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/buttonbackround"
+        android:background="#3D3D3B"
         android:text="@string/odeme_yap"
-        android:textColor="@color/a"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
     <ProgressBar
         android:id="@+id/pb_odeme"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
-        android:layout_width="0dp"
+        android:layout_width="293dp"
         android:layout_height="34dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"

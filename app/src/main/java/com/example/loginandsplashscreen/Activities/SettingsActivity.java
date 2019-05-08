@@ -46,7 +46,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.settingsToolbar);
-        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back_white_24dp);
+        mToolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24px);
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
