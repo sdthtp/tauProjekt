@@ -15,6 +15,7 @@
         android:gravity="top"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:theme="@style/ThemeOverlay.AppCompat.Dark" />
@@ -36,16 +37,29 @@
         app:layout_constraintTop_toBottomOf="@+id/settingsToolbar"
         app:layout_constraintVertical_bias="0.361">
 
+        <ToggleButton
+            android:id="@+id/changeLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="#3D3D3B"
+            android:text="@string/dil_secenegi"
+            android:textColor="@color/colorWhite"
+            android:textOff="@string/dil_secenegi"
+            android:textOn="@string/dil_secenegi" />
+
         <Button
             android:id="@+id/passwordChangeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="@color/colorWhite"
+            android:background="#3D3D3B"
             android:text="@string/sifre_degistir"
-            android:textColor="@color/a"
+            android:textColor="@color/colorWhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.154"
             app:layout_constraintStart_toStartOf="parent" />
@@ -57,26 +71,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:background="@color/colorWhite"
+            android:background="#3D3D3B"
             android:text="@string/cikis_yap"
-            android:textColor="@color/a"
+            android:textColor="@color/colorWhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.144"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordChangeBtn" />
 
-        <ToggleButton
-            android:id="@+id/changeLanguage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorWhite"
-            android:text="@string/dil_secenegi"
-            android:textColor="@color/a"
-            android:textOff="@string/dil_secenegi"
-            android:textOn="@string/dil_secenegi" />
 
     </LinearLayout>
 

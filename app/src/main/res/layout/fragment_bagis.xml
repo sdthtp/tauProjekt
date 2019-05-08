@@ -15,10 +15,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="0dp"
@@ -28,13 +28,12 @@
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
         android:id="@+id/tf_bagis_amount"
-        android:layout_width="0dp"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
@@ -49,44 +48,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ToggleButton
-        android:id="@+id/tb_bagis_type"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+    <co.ceryle.segmentedbutton.SegmentedButtonGroup
+        android:id="@+id/sbg_bagis_type"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/buttonbackround"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:text="@string/togglebutton"
-        android:textColor="@color/a"
-        android:textOff="@string/yemekhane"
-        android:textOn="@string/shuttle"
-        android:textSize="18sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bu_bagis_onayla"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tf_bagis_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/tf_paragonder_amount"
+        app:sbg_backgroundColor="@android:color/white"
+        app:sbg_dividerColor="#0096b4"
+        app:sbg_dividerPadding="10dp"
+        app:sbg_dividerSize="1dp"
+        app:sbg_position="0"
+        app:sbg_radius="2dp"
+        app:sbg_ripple="true"
+        app:sbg_rippleColor="#0096b4"
+        app:sbg_selectorColor="#0096b4"
+        app:sbg_selectorTextColor="@android:color/white"
+        app:sbg_shadow="true"
+        app:sbg_shadowElevation="3dp"
+        app:sbg_shadowMargin="4dp">
+
+        <Button
+            android:id="@+id/bu_feedback_mensa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/b"
+            android:minHeight="10dp"
+            android:text="mensa"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/bu_feedback_shuttle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="10dp"
+            android:text="shuttle"
+            android:textAllCaps="true" />
+    </co.ceryle.segmentedbutton.SegmentedButtonGroup>
 
     <Button
         android:id="@+id/bu_bagis_onayla"
         style="@android:style/Widget.Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/buttonbackround"
+        android:layout_marginBottom="40dp"
+        android:background="#3D3D3B"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
         android:text="@string/onayla"
-        android:textColor="@color/a"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_bagis_type" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"

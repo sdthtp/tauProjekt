@@ -14,9 +14,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="0dp"
+        android:layout_width="286dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
@@ -25,13 +25,13 @@
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <EditText
         android:id="@+id/tf_paragonder_id"
-        android:layout_width="0dp"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -46,7 +46,7 @@
 
     <EditText
         android:id="@+id/tf_paragonder_amount"
-        android:layout_width="0dp"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:ems="10"
@@ -59,24 +59,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tf_paragonder_id" />
 
-    <Button
-        android:id="@+id/bu_paragonder_send"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/buttonbackround"
-        android:onClick="Click3"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:text="@string/gonder"
-        android:textColor="@color/a"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tb_paragonder_balanceId" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -93,24 +75,70 @@
         app:layout_constraintVertical_bias="0.817"
         app:srcCompat="@drawable/tau" />
 
-    <ToggleButton
-        android:id="@+id/tb_paragonder_balanceId"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <co.ceryle.segmentedbutton.SegmentedButtonGroup
+        android:id="@+id/sbg_sendmoney_type"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tf_paragonder_amount"
+        app:sbg_backgroundColor="@android:color/white"
+        app:sbg_dividerColor="#0096b4"
+        app:sbg_dividerPadding="10dp"
+        app:sbg_dividerSize="1dp"
+        app:sbg_position="0"
+        app:sbg_radius="2dp"
+        app:sbg_ripple="true"
+        app:sbg_rippleColor="#0096b4"
+        app:sbg_selectorColor="#0096b4"
+        app:sbg_selectorTextColor="@android:color/white"
+        app:sbg_shadow="true"
+        app:sbg_shadowElevation="3dp"
+        app:sbg_shadowMargin="4dp">
+
+        <Button
+            android:id="@+id/bu_feedback_mensa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/b"
+            android:minHeight="10dp"
+            android:text="mensa"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/bu_feedback_shuttle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="10dp"
+            android:text="shuttle"
+            android:textAllCaps="true" />
+    </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+
+    <Button
+        android:id="@+id/bu_paragonder_send"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/buttonbackround"
+        android:layout_marginBottom="40dp"
+        android:background="#3D3D3B"
+        android:onClick="Click3"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
-        android:text="@string/togglebutton"
-        android:textColor="@color/a"
-        android:textOff="@string/yemekhane"
-        android:textOn="@string/shuttle"
+        android:text="@string/gonder"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp"
+        app:layout_constraintCircleRadius="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tf_paragonder_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/sbg_sendmoney_type"
+        app:layout_constraintVertical_bias="0.486" />
+
 
 </android.support.constraint.ConstraintLayout>

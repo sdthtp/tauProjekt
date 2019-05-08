@@ -14,6 +14,8 @@ import android.widget.ToggleButton;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
 
+import co.ceryle.segmentedbutton.SegmentedButtonGroup;
+
 public class BagisFragment extends Fragment implements View.OnClickListener {
 
     private TextView amounttextView;
@@ -36,18 +38,35 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v){
         amounttextView = getView().findViewById(R.id.tf_bagis_amount);
         String token = LoginActivity.token;
-        ToggleButton t1 = getView().findViewById(R.id.tb_bagis_type);
-        String balanceId;
-        boolean k = t1.isChecked();
+        //ToggleButton t1 = getView().findViewById(R.id.tb_bagis_type);
+        //String balanceId;
+
+        final String[] type = new String[1];
+        SegmentedButtonGroup sbg = getView().findViewById(R.id.sbg_bagis_type);
+
+        sbg.setPosition(0,30);
+        sbg.setOnClickedButtonPosition(new SegmentedButtonGroup.OnClickedButtonPosition() {
+            @Override
+            public void onClickedButtonPosition(int position) {
+                if(position == 0){
+                    type[0] = "mensa";
+                }
+                else if(position == 1){
+                    type[0] = "shuttle";
+                }
+            }
+        });
+
+        /*boolean k = t1.isChecked();
         if (!k) {
             balanceId = "mensa";
             System.out.println(balanceId);
         } else {
             balanceId = "shuttle";
             System.out.println(balanceId);
-        }
+        }*/
         try {
-            System.out.println(new NetworkHandling().execute("freeItem", balanceId, amounttextView.getText() + "", token).get());
+            System.out.println(new NetworkHandling().execute("freeItem", type[0], amounttextView.getText() + "", token).get());
             //TODO: implement correct responsehandling (e.g. if insufficient balance)
             Toast.makeText(getView().getContext(), "Bagisiniz kabul edilmistir. Allah razi olsun!",Toast.LENGTH_SHORT ).show();
         } catch (Exception e) {
