@@ -1,6 +1,7 @@
 package com.example.loginandsplashscreen.Activities;
 
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,14 +36,33 @@ public class EmpfehlenFragment extends Fragment implements View.OnClickListener 
 
     public void onClick(View v){
         ogrenciNoTextView = getView().findViewById(R.id.tf_empfehlen_id);
+        AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+        View mview=getLayoutInflater().inflate(R.layout.dialog_empfehlen, null);
+        Button button =(Button) mview.findViewById(R.id.oner_evet);
+        Button button1=(Button) mview.findViewById(R.id.oner_hayir);
+        builder.setView(mview);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
-        try {
-            System.out.println(new NetworkHandling().execute("empfehlen", ogrenciNoTextView.getText() + "").get());
-            //TODO: implement correct reponsehandling e.g. if student doesn't exist in database
-            Toast.makeText(getView().getContext(), "Kisi önerilmistir",Toast.LENGTH_SHORT ).show();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    System.out.println(new NetworkHandling().execute("empfehlen", ogrenciNoTextView.getText() + "").get());
+                    //TODO: implement correct reponsehandling e.g. if student doesn't exist in database
+                    Toast.makeText(getView().getContext(), getString(R.string.kisi_onerilmistir),Toast.LENGTH_SHORT ).show();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),getString(R.string.kisi_onerilmedi),Toast.LENGTH_SHORT ).show();
+            }
+        });
     }
 
 

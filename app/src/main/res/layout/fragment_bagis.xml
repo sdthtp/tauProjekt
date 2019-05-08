@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:background="@color/b"
             android:minHeight="10dp"
-            android:text="mensa"
+            android:text="@string/mensa"
             android:textAllCaps="true" />
 
         <Button
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="10dp"
-            android:text="shuttle"
+            android:text="@string/shuttle"
             android:textAllCaps="true" />
     </co.ceryle.segmentedbutton.SegmentedButtonGroup>
 
