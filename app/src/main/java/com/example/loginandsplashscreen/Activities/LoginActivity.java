@@ -15,8 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.loginandsplashscreen.Constants;
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
+
+import java.net.URL;
 
 
 public class LoginActivity extends AppCompatActivity {

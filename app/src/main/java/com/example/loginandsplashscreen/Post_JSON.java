@@ -9,6 +9,8 @@ import com.example.loginandsplashscreen.JsonedClasses.PriceId;
 import com.google.gson.Gson;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.http.client.HttpClient;
+
 public class Post_JSON {
 
     //used to get authentication token
@@ -17,8 +19,8 @@ public class Post_JSON {
     public static Object getToken(String json) {
         try {
             System.out.println(json);
-            String query_url = Constants.QUERY;
-            URL url = new URL("HTTP",query_url, Constants.PORT,"/login");
+            //URL url = new URL("HTTP",query_url, Constants.PORT,"/login");
+            URL url = new URL("http://" + Constants.QUERY + ":"+ Constants.PORT + "/login");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
@@ -40,7 +42,8 @@ public class Post_JSON {
         try {
             //System.out.println(json);
             String query_url = Constants.QUERY;
-            URL url = new URL("HTTP",query_url, Constants.PORT,file);
+            //URL url = new URL("HTTP",query_url, Constants.PORT,file);
+            URL url = new URL("http://" + query_url + ":"+ Constants.PORT + file);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty(key,path);
@@ -67,7 +70,9 @@ public class Post_JSON {
         try {
             System.out.println(json);
             String query_url = Constants.QUERY;
-            URL url = new URL("HTTP",query_url, Constants.PORT,file);
+            //URL url = new URL("HTTP",query_url, Constants.PORT,file);
+            URL url = new URL("http://" + query_url + ":"+ Constants.PORT + file);
+
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
@@ -90,7 +95,8 @@ public class Post_JSON {
     public static Object readResponse(String file, String key, String path) {
         try {
             String query_url = Constants.QUERY;
-            URL url = new URL("HTTP",query_url, Constants.PORT,file);
+            //URL url = new URL("HTTP",query_url, Constants.PORT,file);
+            URL url = new URL("http://" + query_url + ":"+ Constants.PORT + file);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty(key, path);

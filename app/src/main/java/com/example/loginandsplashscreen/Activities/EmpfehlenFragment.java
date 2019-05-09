@@ -17,6 +17,7 @@ import com.example.loginandsplashscreen.R;
 public class EmpfehlenFragment extends Fragment implements View.OnClickListener {
     private TextView ogrenciNoTextView;
     private Button oner;
+    private AlertDialog alertDialog;
 
 
     public EmpfehlenFragment() {
@@ -41,7 +42,7 @@ public class EmpfehlenFragment extends Fragment implements View.OnClickListener 
         Button button =(Button) mview.findViewById(R.id.oner_evet);
         Button button1=(Button) mview.findViewById(R.id.oner_hayir);
         builder.setView(mview);
-        AlertDialog alertDialog = builder.create();
+        alertDialog = builder.create();
         alertDialog.show();
 
 
@@ -52,6 +53,7 @@ public class EmpfehlenFragment extends Fragment implements View.OnClickListener 
                     System.out.println(new NetworkHandling().execute("empfehlen", ogrenciNoTextView.getText() + "").get());
                     //TODO: implement correct reponsehandling e.g. if student doesn't exist in database
                     Toast.makeText(getView().getContext(), getString(R.string.kisi_onerilmistir),Toast.LENGTH_SHORT ).show();
+                    alertDialog.dismiss();
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -61,6 +63,7 @@ public class EmpfehlenFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(),getString(R.string.kisi_onerilmedi),Toast.LENGTH_SHORT ).show();
+                alertDialog.dismiss();
             }
         });
     }

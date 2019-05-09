@@ -77,4 +77,5 @@
     <string name="lutfen_yeni_qr_code_istemeyin">Please do not request a new QR-Code without having the current one processed/canceled</string>
     <string name="para_gonderilmedi">Transfer was aborted</string>
     <string name="sifredegistirildi">Password was changed</string>
+    <string name="bagis_iptal_edildi">The donation was cancelled</string>
 </resources>

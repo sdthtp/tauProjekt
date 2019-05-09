@@ -75,4 +75,5 @@
     <string name="lutfen_yeni_qr_code_istemeyin">Bitte fordern Sie keinen neuen QR-Code an bevor die jetzige Zahlung abgeschlossen oder abgelaufen ist!</string>
     <string name="para_gonderilmedi">Geldtransfer wurde abgebrochen</string>
     <string name="sifredegistirildi">Passwort wurde geändert</string>
+    <string name="bagis_iptal_edildi">Die Spende wurde nicht durchgeführt</string>
 </resources>

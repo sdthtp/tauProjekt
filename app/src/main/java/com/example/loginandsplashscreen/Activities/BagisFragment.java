@@ -1,6 +1,7 @@
 package com.example.loginandsplashscreen.Activities;
 
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,7 +21,9 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
 
     private TextView amounttextView;
     private Button bagis;
-
+    private SegmentedButtonGroup sbg;
+    private AlertDialog alertdialog;
+    String[] type = new String[1];
     public BagisFragment() {
         // Required empty public constructor
     }
@@ -32,19 +35,25 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
         View myView = inflater.inflate(R.layout.fragment_bagis, container, false);
         bagis = (Button) myView.findViewById(R.id.bu_bagis_onayla);
         bagis.setOnClickListener(this);
+        type[0] = null;
         return myView;
     }
 
     public void onClick(View v){
         amounttextView = getView().findViewById(R.id.tf_bagis_amount);
-        String token = LoginActivity.token;
         //ToggleButton t1 = getView().findViewById(R.id.tb_bagis_type);
         //String balanceId;
 
-        final String[] type = new String[1];
-        SegmentedButtonGroup sbg = getView().findViewById(R.id.sbg_bagis_type);
 
-        sbg.setPosition(0,30);
+        sbg = getView().findViewById(R.id.sbg_bagis_type);
+
+        AlertDialog.Builder alertbuilder = new AlertDialog.Builder(getContext());
+        View view = getLayoutInflater().inflate(R.layout.dialog_bagis,null);
+        alertbuilder.setView(view);
+        alertdialog = alertbuilder.create();
+        alertdialog.show();
+        Button yes = view.findViewById(R.id.bagis_evet);
+        Button no = view.findViewById(R.id.bagis_hayir);
         sbg.setOnClickedButtonPosition(new SegmentedButtonGroup.OnClickedButtonPosition() {
             @Override
             public void onClickedButtonPosition(int position) {
@@ -57,21 +66,29 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        /*boolean k = t1.isChecked();
-        if (!k) {
-            balanceId = "mensa";
-            System.out.println(balanceId);
-        } else {
-            balanceId = "shuttle";
-            System.out.println(balanceId);
-        }*/
-        try {
-            System.out.println(new NetworkHandling().execute("freeItem", type[0], amounttextView.getText() + "", token).get());
-            //TODO: implement correct responsehandling (e.g. if insufficient balance)
-            Toast.makeText(getView().getContext(), getString(R.string.bagisiniz_kabul_edilmistir),Toast.LENGTH_SHORT ).show();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view1) {
+                try {
+                    if (type[0] == null)
+                        type[0] = "mensa";
+                    System.out.println(type[0]);
+                    System.out.println(new NetworkHandling().execute("freeItem", type[0], amounttextView.getText() + "", LoginActivity.token).get());
+                    //TODO: implement correct responsehandling (e.g. if insufficient balance)
+                    Toast.makeText(getView().getContext(), getString(R.string.bagisiniz_kabul_edilmistir),Toast.LENGTH_SHORT ).show();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                alertdialog.dismiss();
+            }
+        });
+        no.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view2) {
+                Toast.makeText(getContext(),getString(R.string.bagis_iptal_edildi),Toast.LENGTH_SHORT).show();
+                alertdialog.dismiss();
+            }
+        });
+
     }
 
 }
