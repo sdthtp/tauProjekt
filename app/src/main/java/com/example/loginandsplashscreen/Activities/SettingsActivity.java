@@ -58,8 +58,6 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
 
-        //TODO: implement onClickListener for language togglebutton and implement its function
-
         Button logout = (Button) findViewById(R.id.logoutBtn);
         Button changePassword = (Button) findViewById(R.id.passwordChangeBtn);
 
@@ -125,6 +123,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void showChangeLanguageDialog(){
+        //TODO: On Android 6.0.1, when you try to change the language, it automatically sets the language to English
+        //TODO: On all other Android versions (7.1.1+) it is kind of buggy, setLocale must be configured properly
         final String[] listItems = {getString(R.string.turkce), getString(R.string.almanca), getString(R.string.ingilizce)};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
         mBuilder.setTitle(getString(R.string.dil_secenegi));
@@ -165,31 +165,6 @@ public class SettingsActivity extends AppCompatActivity {
         String language = prefs.getString("My_Lang", "");
         setLocale(language);
     }
-
-
-
-   /* public Dialog onCreateDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        // Get the layout inflater
-        LayoutInflater inflater = this.getLayoutInflater();
-
-        // Inflate and set the layout for the dialog
-        // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.dialog_changepassword, null))
-                // Add action buttons
-                .setPositiveButton("Ändern", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(SettingsActivity.this, "Feedback not sent", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(SettingsActivity.this, "Password not changed", Toast.LENGTH_SHORT).show();
-                    }
-                });
-        return builder.create();
-    }*/
 
     public void onBackPressed(){
         Intent i = new Intent(SettingsActivity.this,MainActivity.class);

@@ -30,8 +30,6 @@ import java.sql.SQLOutput;
 import co.ceryle.segmentedbutton.SegmentedButtonGroup;
 
 public class FeedbackActivity extends AppCompatActivity {
-
-    public static String token = "";
     private SimpleRatingBar srb;
     private EditText commentField;
     private SegmentedButtonGroup sbg;
@@ -68,7 +66,6 @@ public class FeedbackActivity extends AppCompatActivity {
         });
 
         sbg = (SegmentedButtonGroup) findViewById(R.id.sbg_feedback_type);
-        sbg.setPosition(0,10);
         sbg.setOnClickedButtonPosition(new SegmentedButtonGroup.OnClickedButtonPosition() {
             @Override
             public void onClickedButtonPosition(int position) {
@@ -81,6 +78,7 @@ public class FeedbackActivity extends AppCompatActivity {
             }
         });
 
+        type[0] = null;
         sendFeedback = (Button) findViewById(R.id.bu_feedback_send);
         sendFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,8 +111,9 @@ public class FeedbackActivity extends AppCompatActivity {
 
                     String text = commentField.getText().toString();
                     System.out.println(text);
-
-                    NetworkHandling h = new NetworkHandling();
+                    if (type[0]==null)
+                        type[0] = "mensa";
+                    System.out.println(type[0]);
 
                     try {
                         String f = new NetworkHandling().execute("feedback",star, type[0],text,LoginActivity.token).get();
@@ -129,7 +128,7 @@ public class FeedbackActivity extends AppCompatActivity {
 
     public void onBackPressed(){
         Intent i = new Intent(FeedbackActivity.this,MainActivity.class);
-        startActivity(i);
         finish();
+        startActivity(i);
     }
 }
