@@ -70,9 +70,9 @@
     <string name="odeme_zamaninda_yapilmadi">Die Zahlung wurde nicht rechtzeitig gemacht! Bitte versuchen Sie es erneut</string>
     <string name="para_gonderildi">Die Transaktion war erfolgreich</string>
     <string name="sifreuyusmuyor">Kennwörter stimmen nicht überein!</string>
-    <string name="ogrenci_numaranizi_girin">.</string>
-    <string name="odeme_basarili">.</string>
-    <string name="lutfen_yeni_qr_code_istemeyin">.</string>
-    <string name="para_gonderilmedi">.</string>
-    <string name="sifredegistirildi">.</string>
+    <string name="ogrenci_numaranizi_girin">Geben Sie ihre ID ein</string>
+    <string name="odeme_basarili">Zahlung erfolgreich!</string>
+    <string name="lutfen_yeni_qr_code_istemeyin">Bitte fordern Sie keinen neuen QR-Code an bevor die jetzige Zahlung abgeschlossen oder abgelaufen ist!</string>
+    <string name="para_gonderilmedi">Geldtransfer wurde abgebrochen</string>
+    <string name="sifredegistirildi">Passwort wurde geändert</string>
 </resources>
