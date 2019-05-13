@@ -20,7 +20,7 @@ public class Post_JSON {
         try {
             System.out.println(json);
             //URL url = new URL("HTTP",query_url, Constants.PORT,"/login");
-            URL url = new URL("http://" + Constants.QUERY + ":"+ Constants.PORT + "/login");
+            URL url = new URL("https://" + Constants.QUERY + ":"+ Constants.PORT + "/login");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
@@ -43,7 +43,7 @@ public class Post_JSON {
             //System.out.println(json);
             String query_url = Constants.QUERY;
             //URL url = new URL("HTTP",query_url, Constants.PORT,file);
-            URL url = new URL("http://" + query_url + ":"+ Constants.PORT + file);
+            URL url = new URL("https://" + query_url + ":"+ Constants.PORT + file);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty(key,path);
@@ -71,7 +71,7 @@ public class Post_JSON {
             System.out.println(json);
             String query_url = Constants.QUERY;
             //URL url = new URL("HTTP",query_url, Constants.PORT,file);
-            URL url = new URL("http://" + query_url + ":"+ Constants.PORT + file);
+            URL url = new URL("https://" + query_url + ":"+ Constants.PORT + file);
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
@@ -96,7 +96,7 @@ public class Post_JSON {
         try {
             String query_url = Constants.QUERY;
             //URL url = new URL("HTTP",query_url, Constants.PORT,file);
-            URL url = new URL("http://" + query_url + ":"+ Constants.PORT + file);
+            URL url = new URL("https://" + query_url + ":"+ Constants.PORT + file);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(5000);
             conn.setRequestProperty(key, path);
