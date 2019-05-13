@@ -180,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
 
                         TextView t = drawerView.findViewById(R.id.user_name);
                     try {
-                        //TODO: Tell backend to round off the numbers to two commas
                         t.setText(o.getName());
                         t = drawerView.findViewById(R.id.ogrenci_numarasi);
                         t.setText(o.getId());

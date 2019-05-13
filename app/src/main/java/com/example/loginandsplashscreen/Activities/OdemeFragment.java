@@ -73,7 +73,6 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                        if (check.equals("paid successfully")) {
                            mProgressBar.setProgress(0);
                            mCountDownTimer.cancel();
-                           //TODO: Make this and all other Toasts multilingual
                            Toast.makeText(getView().getContext(),getString(R.string.odeme_basarili), Toast.LENGTH_SHORT).show();
                            ImageView img = getView().getRootView().findViewById(R.id.imageView2);
                            processingPayment = false;
