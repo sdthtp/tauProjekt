@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.loginandsplashscreen.Handlers.NetworkHandling;
 import com.example.loginandsplashscreen.R;
@@ -31,6 +32,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     new NetworkHandling().execute("forgotPassword",text.getText().toString()).get();
+                    Toast.makeText(ForgotPasswordActivity.this, "Şifreniz gönderildi", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     System.out.println(e);
                 }
