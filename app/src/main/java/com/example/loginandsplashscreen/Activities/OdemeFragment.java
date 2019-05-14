@@ -1,13 +1,7 @@
 package com.example.loginandsplashscreen.Activities;
-
-import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,6 +72,8 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                            processingPayment = false;
                            img.setVisibility(getView().INVISIBLE);
                            i = 0;
+                           MainActivity m = new MainActivity();
+                           m.refresh();
                        }
                    } catch (Exception e) {
                        processingPayment = false;
@@ -123,7 +119,6 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
             } else {
                 Toast.makeText(getView().getContext(),getString(R.string.lutfen_yeni_qr_code_istemeyin),Toast.LENGTH_SHORT ).show();
             }
-
     }
 }
 
