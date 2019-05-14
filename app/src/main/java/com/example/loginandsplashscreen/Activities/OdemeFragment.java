@@ -72,8 +72,7 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                            processingPayment = false;
                            img.setVisibility(getView().INVISIBLE);
                            i = 0;
-                           MainActivity m = new MainActivity();
-                           m.refresh();
+                           MainActivity.refresh();
                        }
                    } catch (Exception e) {
                        processingPayment = false;
