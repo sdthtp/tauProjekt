@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -29,12 +30,12 @@ import com.google.gson.Gson;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    Customer o = null;
+    static Customer o = null;
+    static NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         checkConnectivity();
-
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px); // sets the toggle button icon
         mDrawerLayout = findViewById(R.id.drawer);
-        NavigationView navigationView = findViewById(R.id.nav_menu);
+        navigationView = findViewById(R.id.nav_menu);
         try {
             o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
         } catch (Exception e) {
@@ -180,7 +181,6 @@ public class MainActivity extends AppCompatActivity {
 
                         TextView t = drawerView.findViewById(R.id.user_name);
                     try {
-                        //TODO: Tell backend to round off the numbers to two commas
                         t.setText(o.getName());
                         t = drawerView.findViewById(R.id.ogrenci_numarasi);
                         t.setText(o.getId());
@@ -216,6 +216,27 @@ public class MainActivity extends AppCompatActivity {
         if ((connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() != NetworkInfo.State.CONNECTED &&
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED)) {
             logout();
+        }
+    }
+
+    public static void refresh() {
+        try {
+
+            try {
+                o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            TextView t = navigationView.findViewById(R.id.user_name);
+            t.setText(o.getName());
+            t = navigationView.findViewById(R.id.ogrenci_numarasi);
+            t.setText(o.getId());
+            t = navigationView.findViewById(R.id.yemek_bakiye);
+            t.setText(o.getBalanceMensa() + " TL");
+            t = navigationView.findViewById(R.id.shuttle_bakiye);
+            t.setText(o.getBalanceShuttle() + " TL");
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 

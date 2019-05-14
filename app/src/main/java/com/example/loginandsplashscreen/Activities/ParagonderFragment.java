@@ -36,7 +36,6 @@ public class ParagonderFragment extends Fragment implements OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //TODO: make possible to insert partial sums (e.g. 0.5TL);
-        //TODO: Tell backend to safe everything about cash as double/float
         View myView = inflater.inflate(R.layout.fragment_paragonder, container, false);
         gonder = (Button) myView.findViewById(R.id.bu_paragonder_send);
         gonder.setOnClickListener(this);
@@ -84,6 +83,7 @@ public class ParagonderFragment extends Fragment implements OnClickListener {
                     System.out.println("TRANSFER DONE: RESPONSE: " + response);
                     Toast.makeText(getContext(),getString(R.string.para_gonderildi),Toast.LENGTH_SHORT ).show();
                     alertDialog.dismiss();
+                    MainActivity.refresh();
                 } catch (Exception e) {
                     System.out.println("EXCEPTION WHILE MONEY TRANSFER: " + e);
                 }
