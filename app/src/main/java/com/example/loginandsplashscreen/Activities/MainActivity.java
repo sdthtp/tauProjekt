@@ -30,7 +30,8 @@ import com.google.gson.Gson;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    Customer o = null;
+    static Customer o = null;
+    static NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px); // sets the toggle button icon
         mDrawerLayout = findViewById(R.id.drawer);
-        NavigationView navigationView = findViewById(R.id.nav_menu);
+        navigationView = findViewById(R.id.nav_menu);
         try {
             o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
         } catch (Exception e) {
@@ -218,24 +219,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void refresh() {
+    public static void refresh() {
         try {
-            /*LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View drawerView = inflater.inflate(R.layout.header, null,false);
+
             try {
                 o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
             } catch (Exception e) {
                 System.out.println(e);
             }
-            TextView t = drawerView.findViewById(R.id.user_name);
+            TextView t = navigationView.findViewById(R.id.user_name);
             t.setText(o.getName());
-            t = drawerView.findViewById(R.id.ogrenci_numarasi);
+            t = navigationView.findViewById(R.id.ogrenci_numarasi);
             t.setText(o.getId());
-            t = drawerView.findViewById(R.id.yemek_bakiye);
+            t = navigationView.findViewById(R.id.yemek_bakiye);
             t.setText(o.getBalanceMensa() + " TL");
-            t = drawerView.findViewById(R.id.shuttle_bakiye);
-            t.setText(o.getBalanceShuttle() + " TL");*/
-            mDrawerLayout.closeDrawer(0);
+            t = navigationView.findViewById(R.id.shuttle_bakiye);
+            t.setText(o.getBalanceShuttle() + " TL");
         } catch (Exception e) {
             System.out.println(e);
         }

@@ -83,6 +83,7 @@ public class ParagonderFragment extends Fragment implements OnClickListener {
                     System.out.println("TRANSFER DONE: RESPONSE: " + response);
                     Toast.makeText(getContext(),getString(R.string.para_gonderildi),Toast.LENGTH_SHORT ).show();
                     alertDialog.dismiss();
+                    MainActivity.refresh();
                 } catch (Exception e) {
                     System.out.println("EXCEPTION WHILE MONEY TRANSFER: " + e);
                 }
