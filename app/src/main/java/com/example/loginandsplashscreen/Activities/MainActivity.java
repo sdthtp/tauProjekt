@@ -224,14 +224,15 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            TextView t = navigationView.findViewById(R.id.user_name);
-            t.setText(o.getName());
-            t = navigationView.findViewById(R.id.ogrenci_numarasi);
-            t.setText(o.getId());
-            t = navigationView.findViewById(R.id.yemek_bakiye);
-            t.setText(o.getBalanceMensa() + " TL");
-            t = navigationView.findViewById(R.id.shuttle_bakiye);
-            t.setText(o.getBalanceShuttle() + " TL");
+            //TextView t = navigationView.findViewById(R.id.user_name);
+            //t.setText(o.getName()); user_name'e gerek yok
+            //t = navigationView.findViewById(R.id.ogrenci_numarasi); ogrenci numarasını güncellemeye gerek yok
+            //t.setText(o.getId());
+            View headerView = navigationView.getHeaderView(0);
+            TextView user_info = (TextView) headerView.findViewById(R.id.yemek_bakiye);
+            user_info.setText(o.getBalanceMensa() + " TL");
+            user_info = headerView.findViewById(R.id.shuttle_bakiye);
+            user_info.setText(o.getBalanceShuttle() + " TL");
         } catch (Exception e) {
             System.out.println(e);
         }
