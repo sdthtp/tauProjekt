@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         checkConnectivity();
-
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
@@ -215,6 +215,29 @@ public class MainActivity extends AppCompatActivity {
         if ((connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() != NetworkInfo.State.CONNECTED &&
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED)) {
             logout();
+        }
+    }
+
+    public void refresh() {
+        try {
+            /*LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View drawerView = inflater.inflate(R.layout.header, null,false);
+            try {
+                o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            TextView t = drawerView.findViewById(R.id.user_name);
+            t.setText(o.getName());
+            t = drawerView.findViewById(R.id.ogrenci_numarasi);
+            t.setText(o.getId());
+            t = drawerView.findViewById(R.id.yemek_bakiye);
+            t.setText(o.getBalanceMensa() + " TL");
+            t = drawerView.findViewById(R.id.shuttle_bakiye);
+            t.setText(o.getBalanceShuttle() + " TL");*/
+            mDrawerLayout.closeDrawer(0);
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 
