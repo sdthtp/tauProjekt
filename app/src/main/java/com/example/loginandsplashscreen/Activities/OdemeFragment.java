@@ -73,7 +73,9 @@ public class OdemeFragment extends Fragment implements View.OnClickListener {
                            img.setVisibility(getView().INVISIBLE);
                            i = 0;
                            MainActivity.refresh();
-                       }
+                       } else if (check.equals("TODO")) {
+
+                       } //... TODO: https://workshop-omercem.com:8443/swagger-ui.html#/
                    } catch (Exception e) {
                        processingPayment = false;
                        System.out.println("Error while trying to check whether Payment was complete! " + e);

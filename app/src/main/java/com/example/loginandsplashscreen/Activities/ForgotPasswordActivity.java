@@ -32,6 +32,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     new NetworkHandling().execute("forgotPassword",text.getText().toString()).get();
+                    //TODO: Add correct responsehandling --> https://workshop-omercem.com:8443/swagger-ui.html#/
                     Toast.makeText(ForgotPasswordActivity.this, "Şifreniz gönderildi", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     System.out.println(e);

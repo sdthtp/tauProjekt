@@ -51,7 +51,7 @@ public class EmpfehlenFragment extends Fragment implements View.OnClickListener 
             public void onClick(View view) {
                 try {
                     System.out.println(new NetworkHandling().execute("empfehlen", ogrenciNoTextView.getText() + "").get());
-                    //TODO: implement correct reponsehandling e.g. if student doesn't exist in database
+                    //TODO: implement correct reponsehandling e.g. if student doesn't exist in database --> https://workshop-omercem.com:8443/swagger-ui.html#/
                     Toast.makeText(getView().getContext(), getString(R.string.kisi_onerilmistir),Toast.LENGTH_SHORT ).show();
                     alertDialog.dismiss();
                 } catch (Exception e) {

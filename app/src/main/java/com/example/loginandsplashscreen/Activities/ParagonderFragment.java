@@ -79,7 +79,7 @@ public class ParagonderFragment extends Fragment implements OnClickListener {
                         type[0]="mensa";
                     System.out.println(type[0]);
                     String response = new NetworkHandling().execute("transfer",id,type[0],amount,LoginActivity.token).get();
-                    //TODO: Implement correct response to wrong input (e.g. if user does not exist or balance is insufficient)
+                    //TODO: Implement correct response to wrong input (e.g. if user does not exist or balance is insufficient) --> https://workshop-omercem.com:8443/swagger-ui.html#/
                     System.out.println("TRANSFER DONE: RESPONSE: " + response);
                     Toast.makeText(getContext(),getString(R.string.para_gonderildi),Toast.LENGTH_SHORT ).show();
                     alertDialog.dismiss();

@@ -20,8 +20,11 @@ import org.jsoup.select.Elements;
 
 public class YemekListeFragment extends Fragment implements View.OnClickListener {
 
+    //***********
+    //Not used in final version
+    //***********
     public YemekListeFragment() {
-        // Required empty public constructor
+
     }
 
 
