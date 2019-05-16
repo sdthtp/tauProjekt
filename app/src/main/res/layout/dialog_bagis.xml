@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:paddingLeft="20dp"
@@ -31,29 +31,31 @@
 
     <Button
         android:id="@+id/bagis_evet"
-        android:layout_width="64dp"
-        android:layout_height="39dp"
+        android:layout_width="87dp"
+        android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/buttonbackround"
+        android:background="#3D3D3B"
         android:text="@string/evet"
+        android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/bagis_hayir"
-        android:layout_width="64dp"
-        android:layout_height="39dp"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/buttonbackround"
+        android:background="#3D3D3B"
         android:text="@string/hayir"
+        android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toStartOf="@+id/bagis_evet"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.981"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
