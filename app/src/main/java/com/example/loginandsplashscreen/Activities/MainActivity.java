@@ -16,7 +16,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -150,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
                                 finish();
                                 startActivity(intent2);
-
                                 break;
                         }
 
@@ -164,16 +162,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        View headerView = navigationView.getHeaderView(0);
-        TextView user_info = (TextView) headerView.findViewById(R.id.user_name);
-        user_info.setText(o.getName());
-        user_info = (TextView) headerView.findViewById(R.id.ogrenci_numarasi);
-        user_info.setText(o.getId());
-        user_info = (TextView) headerView.findViewById(R.id.yemek_bakiye);
-        user_info.setText(o.getBalanceMensa() + " TL");
-        user_info = (TextView) headerView.findViewById(R.id.shuttle_bakiye);
-        user_info.setText(o.getBalanceShuttle()+" TL");
-
+        if (o != null) {
+            View headerView = navigationView.getHeaderView(0);
+            TextView user_info = (TextView) headerView.findViewById(R.id.user_name);
+            user_info.setText(o.getName());
+            user_info = (TextView) headerView.findViewById(R.id.ogrenci_numarasi);
+            user_info.setText(o.getId());
+            user_info = (TextView) headerView.findViewById(R.id.yemek_bakiye);
+            user_info.setText(o.getBalanceMensa() + " TL");
+            user_info = (TextView) headerView.findViewById(R.id.shuttle_bakiye);
+            user_info.setText(o.getBalanceShuttle() + " TL");
+        }
 
         //Listens the SideBarMenu(Drawer) actions
         mDrawerLayout.addDrawerListener(
