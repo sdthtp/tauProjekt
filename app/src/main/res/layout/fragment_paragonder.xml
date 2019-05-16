@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.817"
-        app:srcCompat="@drawable/tau" />
+        app:srcCompat="@drawable/tau_pay" />
 
     <co.ceryle.segmentedbutton.SegmentedButtonGroup
         android:id="@+id/sbg_sendmoney_type"
