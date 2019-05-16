@@ -1,4 +1,5 @@
 package com.example.loginandsplashscreen.Activities;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,7 +16,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -50,19 +50,19 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.nav_menu);
         try {
-            o = new Gson().fromJson(new NetworkHandling().execute("getInfo",LoginActivity.token).get(), Customer.class);
+            o = new Gson().fromJson(new NetworkHandling().execute("getInfo", LoginActivity.token).get(), Customer.class);
         } catch (Exception e) {
             System.out.println(e);
         }
 
-        BottomNavigationView navigationView2=findViewById(R.id.bottom_nav);
-        final BagisFragment bagisFragment=new BagisFragment();
-        final EmpfehlenFragment empfehlenFragment =new EmpfehlenFragment();
-        final ParagonderFragment paragonderFragment =new ParagonderFragment();
+        BottomNavigationView navigationView2 = findViewById(R.id.bottom_nav);
+        final BagisFragment bagisFragment = new BagisFragment();
+        final EmpfehlenFragment empfehlenFragment = new EmpfehlenFragment();
+        final ParagonderFragment paragonderFragment = new ParagonderFragment();
         final OdemeFragment odemeFragment = new OdemeFragment();
 
 
-        setFragment(odemeFragment,"ODEME_FRAGMENT");
+        setFragment(odemeFragment, "ODEME_FRAGMENT");
 
         /*Button m1showDialog=(Button) findViewById(R.id.bu_paragonder_send);
         m1showDialog.setOnClickListener(new View.OnClickListener() {
@@ -107,18 +107,18 @@ public class MainActivity extends AppCompatActivity {
         navigationView2.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id=menuItem.getItemId();
-                if(id==R.id.bagis){
-                    setFragment(bagisFragment,"BAGIS_FRAGMENT");
+                int id = menuItem.getItemId();
+                if (id == R.id.bagis) {
+                    setFragment(bagisFragment, "BAGIS_FRAGMENT");
                     return true;
-                }else if(id==R.id.oner){
-                    setFragment(empfehlenFragment,"EMPFEHLEN_FRAGMENT");
+                } else if (id == R.id.oner) {
+                    setFragment(empfehlenFragment, "EMPFEHLEN_FRAGMENT");
                     return true;
-                }else if(id == R.id.paragonder){
-                    setFragment(paragonderFragment,"PARAGONDER_FRAGMENT");
+                } else if (id == R.id.paragonder) {
+                    setFragment(paragonderFragment, "PARAGONDER_FRAGMENT");
                     return true;
                 } else if (id == R.id.odeme) {
-                    setFragment(odemeFragment,"ODEME_FRAGMENT");
+                    setFragment(odemeFragment, "ODEME_FRAGMENT");
                     return true;
                 } else {
                     return false;
@@ -149,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
                                 finish();
                                 startActivity(intent2);
-
                                 break;
                         }
 
@@ -163,6 +162,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        if (o != null) {
+            View headerView = navigationView.getHeaderView(0);
+            TextView user_info = (TextView) headerView.findViewById(R.id.user_name);
+            user_info.setText(o.getName());
+            user_info = (TextView) headerView.findViewById(R.id.ogrenci_numarasi);
+            user_info.setText(o.getId());
+            user_info = (TextView) headerView.findViewById(R.id.yemek_bakiye);
+            user_info.setText(o.getBalanceMensa() + " TL");
+            user_info = (TextView) headerView.findViewById(R.id.shuttle_bakiye);
+            user_info.setText(o.getBalanceShuttle() + " TL");
+        }
 
         //Listens the SideBarMenu(Drawer) actions
         mDrawerLayout.addDrawerListener(
@@ -176,20 +186,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDrawerOpened(View drawerView) {
                         actionbar.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
-
-                        TextView t = drawerView.findViewById(R.id.user_name);
-                    try {
-                        t.setText(o.getName());
-                        t = drawerView.findViewById(R.id.ogrenci_numarasi);
-                        t.setText(o.getId());
-                        t = drawerView.findViewById(R.id.yemek_bakiye);
-                        t.setText(o.getBalanceMensa() + " TL");
-                        t = drawerView.findViewById(R.id.shuttle_bakiye);
-                        t.setText(o.getBalanceShuttle() + " TL");
-                    } catch (Exception e) {
-                        System.out.println(e);
-                        finish();
-                    }
 
                         // As a respond when the drawer is opened, sets back arrow icon
                     }
@@ -210,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkConnectivity() {
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if ((connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() != NetworkInfo.State.CONNECTED &&
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() != NetworkInfo.State.CONNECTED)) {
             logout();
@@ -225,14 +221,15 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            TextView t = navigationView.findViewById(R.id.user_name);
-            t.setText(o.getName());
-            t = navigationView.findViewById(R.id.ogrenci_numarasi);
-            t.setText(o.getId());
-            t = navigationView.findViewById(R.id.yemek_bakiye);
-            t.setText(o.getBalanceMensa() + " TL");
-            t = navigationView.findViewById(R.id.shuttle_bakiye);
-            t.setText(o.getBalanceShuttle() + " TL");
+            //TextView t = navigationView.findViewById(R.id.user_name);
+            //t.setText(o.getName()); user_name'e gerek yok
+            //t = navigationView.findViewById(R.id.ogrenci_numarasi); ogrenci numarasını güncellemeye gerek yok
+            //t.setText(o.getId());
+            View headerView = navigationView.getHeaderView(0);
+            TextView user_info = (TextView) headerView.findViewById(R.id.yemek_bakiye);
+            user_info.setText(o.getBalanceMensa() + " TL");
+            user_info = headerView.findViewById(R.id.shuttle_bakiye);
+            user_info.setText(o.getBalanceShuttle() + " TL");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -246,22 +243,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkToken() throws Exception {
         SharedPreferences preferences = this.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
-        LoginActivity.token = preferences.getString("var1",LoginActivity.token);
+        LoginActivity.token = preferences.getString("var1", LoginActivity.token);
         if (!isInfoValid(LoginActivity.token)) {
             logout();
         }
     }
 
-    private boolean isInfoValid(String token) throws Exception{
+    private boolean isInfoValid(String token) throws Exception {
         NetworkHandling h = new NetworkHandling();
-        String k = h.execute("getInfo",token).get();
+        String k = h.execute("getInfo", token).get();
         System.out.println(k);
         return k.charAt(0) == '{';
     }
 
-    private void setFragment(Fragment fragment, String tag){
-        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame,fragment,tag);
+    private void setFragment(Fragment fragment, String tag) {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame, fragment, tag);
         fragmentTransaction.commit();
     }
 
