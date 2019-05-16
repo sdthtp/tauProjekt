@@ -22,7 +22,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="174dp"
-        app:srcCompat="@drawable/tau_logo" />
+        app:srcCompat="@drawable/tau_pay" />
 
     <ScrollView
         android:id="@+id/login_form"
