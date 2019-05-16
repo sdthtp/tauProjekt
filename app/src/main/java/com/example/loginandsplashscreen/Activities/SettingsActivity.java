@@ -97,7 +97,6 @@ public class SettingsActivity extends AppCompatActivity {
                         String neu = neuespasswort.getText().toString();
                         String neuconfirm = neuespasswortconfirm.getText().toString();
                         //TODO: implement check, whether the old password is correct
-                        NetworkHandling h = new NetworkHandling();
 
                         try {
                             if(!neu.equals(neuconfirm)){
@@ -106,6 +105,7 @@ public class SettingsActivity extends AppCompatActivity {
                             else{
                                 String f = new NetworkHandling().execute("changePassword",alt,neu,LoginActivity.token).get();
                                 System.out.println(f);
+                                //TODO: Add correct responsehandling --> https://workshop-omercem.com:8443/swagger-ui.html#/
                                 Toast.makeText(SettingsActivity.this,getString(R.string.sifredegistirildi), Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {

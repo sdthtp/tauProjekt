@@ -74,7 +74,7 @@ public class BagisFragment extends Fragment implements View.OnClickListener {
                         type[0] = "mensa";
                     System.out.println(type[0]);
                     System.out.println(new NetworkHandling().execute("freeItem", type[0], amounttextView.getText() + "", LoginActivity.token).get());
-                    //TODO: implement correct responsehandling (e.g. if insufficient balance)
+                    //TODO: implement correct responsehandling (e.g. if insufficient balance) --> https://workshop-omercem.com:8443/swagger-ui.html#/
                     Toast.makeText(getView().getContext(), getString(R.string.bagisiniz_kabul_edilmistir),Toast.LENGTH_SHORT ).show();
                     MainActivity.refresh();
                     //TODO: optimization: Tell Ömer to send back info so we dont have to do 2 requests
