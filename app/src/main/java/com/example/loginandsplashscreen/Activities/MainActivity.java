@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        checkConnectivity();
+        /*checkConnectivity();
         System.out.println("Token in MainActivity: " + LoginActivity.token);
         try {
             checkToken();
         } catch (Exception e) {
             System.out.println(e);
-        }
+        }*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Toolbar toolbar = findViewById(R.id.toolbar);
@@ -149,6 +149,11 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
                                 finish();
                                 startActivity(intent2);
+                                break;
+                            case R.id.termin:
+                                Intent intent3 = new Intent(MainActivity.this,TerminActivity.class);
+                                finish();
+                                startActivity(intent3);
                                 break;
                         }
 

@@ -8,7 +8,6 @@ import com.example.loginandsplashscreen.Post_JSON;
 
 
 public class NetworkHandling extends AsyncTask<String,Void,String> {
-
     protected String doInBackground(String... param) {
         int operation = InstructionHandler.getInstruction(param[0]);
         if (operation == 1) {

@@ -14,8 +14,6 @@ import org.apache.http.client.HttpClient;
 public class Post_JSON {
 
     //used to get authentication token
-
-
     public static Object getToken(String json) {
         try {
             System.out.println(json);
@@ -176,5 +174,20 @@ public class Post_JSON {
         String jsoned = "{\"star\": " + star + ",\"type\": \"" + type + "\",\"text\": \"" + feedbackText + "\"}";
         System.out.println(jsoned);
         return (String)Post_JSON(jsoned,"/customers/feedback","Authorization",token);
+    }
+
+    public static String getTeachers(String token) {
+        //TODO: return all teachers of corresponding facility
+        return null;
+    }
+
+    public static String getAvailableDay(String teacher, String token) {
+        //TODO: get the day on which teacher is available
+        return null;
+    }
+
+    public static String termin(int week, String teacher, int slot, String token) {
+        //TODO: Send backend that you registered for this date
+        return null;
     }
 }

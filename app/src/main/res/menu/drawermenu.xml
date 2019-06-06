@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/feedback" android:title="@string/feedback" android:icon="@drawable/ic_baseline_feedback_24px"/>
     <item android:id="@+id/ayarlar" android:title="@string/ayarlar" android:icon="@drawable/ic_baseline_settings_20px"/>
+    <item
+        android:id="@+id/termin"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="Termin" />
 
 
 </menu>

@@ -64,7 +64,6 @@ public class FeedbackActivity extends AppCompatActivity {
                 }
             }
         });
-
         sbg = (SegmentedButtonGroup) findViewById(R.id.sbg_feedback_type);
         sbg.setOnClickedButtonPosition(new SegmentedButtonGroup.OnClickedButtonPosition() {
             @Override
